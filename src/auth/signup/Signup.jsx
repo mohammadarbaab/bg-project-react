@@ -15,19 +15,7 @@ import {
 import { Field, Form, Formik } from "formik";
 import { Input } from "@chakra-ui/react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-// import { object, string } from "yup";
-
 import React from "react";
-
-// const signupValidationSchema = object({
-//   name: string().required("Name is required"),
-//   username: string().required("Surname is required"),
-//   email: string().email("Email is invalid").required("Email is required"),
-//   password: string()
-//     .min(6, "Password must be at least 6 characters")
-//     .required("Password is required"),
-// });
 
 function Signup() {
   return (

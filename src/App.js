@@ -1,10 +1,10 @@
 import React from "react";
-import Signup from "./auth/signup/Signup";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <div>
-      <Signup />
+    <Dashboard />
     </div>
   );
 }

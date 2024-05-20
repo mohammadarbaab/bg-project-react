@@ -1,3 +1,3440 @@
+// import {
+//   Box,
+//   Flex,
+//   Heading,
+//   Img,
+//   FormLabel,
+//   Text,
+//   Stack,
+//   Image,
+//   FormControl,
+//   Checkbox,
+//   Button,
+//   Icon,
+// } from "@chakra-ui/react";
+// import { Field, Form, Formik } from "formik";
+// import { Input } from "@chakra-ui/react";
+// import { FaGoogle } from "react-icons/fa";
+// import React from "react";
+
+// function Signup() {
+//   return (
+//     <Flex
+//       display="inline-flex"
+//       height="100%"
+//       padding={{ base: "57px 5%", md: "57px 10.616px 57px 57px" }}
+//       alignItems="center"
+//       justifyContent="space-between"
+//       gap="60.287px"
+//       bg="#352E6B"
+//       flexWrap="wrap"
+//       width="full"
+//     >
+//       {/* Left side - Sign Up Page */}
+//       <Box
+//         width={{ base: "100%", md: "480px" }}
+//         height="auto"
+//         borderRadius="16px"
+//         border="1px solid rgba(0, 0, 0, 0.15)"
+//         bg="#FFF"
+//         padding="20px"
+//         marginBottom={{ base: "40px", md: "0" }}
+//         position="relative"
+//       >
+//         {/* Content of the Sign Up Page */}
+//         <Stack
+//           direction="column"
+//           alignItems="start"
+//           justifyContent="start"
+//           spacing="9.5px"
+//           padding="35.8px"
+//         >
+//           <Flex alignItems="center" gap="9.5px">
+//             <Image
+//               h="58px"
+//               w="62.1px"
+//               src="/images/logo.svg"
+//               alt=""
+//               loading="lazy"
+//               flexShrink="0"
+//             />
+//             {/* "TradeRyt" Heading */}
+//             <Text
+//               fontWeight="semibold"
+//               fontFamily="Ubuntu"
+//               fontSize="34.554px"
+//               fontStyle="normal"
+//               lineHeight="47.378px"
+//               letterSpacing="1.037px"
+//               color="rgba(0, 0, 0, 0.60)"
+//               textAlign="left"
+//               display="inline-block"
+//             >
+//               TradeRyt
+//             </Text>
+//           </Flex>
+//           {/* Signup Heading */}
+//           <Heading
+//             as="h1"
+//             color="rgba(0, 0, 0, 1)"
+//             fontFamily="Ubuntu"
+//             fontSize="32px"
+//             fontWeight="600"
+//             mt="40px"
+//             letterSpacing="-0.32px"
+//           >
+//             Signup
+//           </Heading>
+//           {/* Signup Form */}
+//           <Formik
+//             initialValues={{
+//               email: "",
+//               username: "",
+//               password: "",
+//               firstname: "",
+//               terms: false,
+//             }}
+//             onSubmit={(values) => {
+//               console.log(values);
+//             }}
+//           >
+//             {({ handleSubmit }) => (
+//               <Form onSubmit={handleSubmit}>
+//                 <Stack spacing={1}>
+//                   <Field name="name">
+//                     {({ field }) => (
+//                       <Flex
+//                         flexDirection="column"
+//                         alignItems="flex-start"
+//                         gap="6px"
+//                         mt="10px"
+//                       >
+//                         <FormLabel
+//                           htmlFor="name"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                           lineHeight="normal"
+//                           letterSpacing="-0.14px"
+//                         >
+//                           First Name
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="name"
+//                           type="text"
+//                           fontFamily="Ubuntu"
+//                           placeholder="Enter your first name"
+//                           width={{ base: "100%", md: "350px" }}
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                           background="#FFF"
+//                           color="black"
+//                           _placeholder={{ color: "gray.500" }} // Placeholder color
+//                         />
+//                       </Flex>
+//                     )}
+//                   </Field>
+//                   <Field name="username">
+//                     {({ field }) => (
+//                       <Flex
+//                         flexDirection="column"
+//                         alignItems="flex-start"
+//                         gap="8px"
+//                         mt="14px"
+//                       >
+//                         <FormLabel
+//                           htmlFor="username"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                           lineHeight="normal"
+//                           letterSpacing="-0.14px"
+//                         >
+//                           Email
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="email"
+//                           type="email"
+//                           fontFamily="Ubuntu"
+//                           placeholder="Enter your email"
+//                           width={{ base: "100%", md: "350px" }}
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                           background="#FFF"
+//                           color="black"
+//                           _placeholder={{ color: "gray.500" }}
+//                         />
+//                       </Flex>
+//                     )}
+//                   </Field>
+//                   <Field name="password">
+//                     {({ field }) => (
+//                       <Flex
+//                         flexDirection="column"
+//                         alignItems="flex-start"
+//                         gap="8px"
+//                         mt="14px"
+//                       >
+//                         <FormLabel
+//                           htmlFor="password"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                           lineHeight="normal"
+//                           letterSpacing="-0.14px"
+//                         >
+//                           Username
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="name"
+//                           type="name"
+//                           fontFamily="Ubuntu"
+//                           placeholder="Enter your Username"
+//                           width={{ base: "100%", md: "350px" }}
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                           background="#FFF"
+//                           color="black"
+//                           _placeholder={{ color: "gray.500" }}
+//                         />
+//                       </Flex>
+//                     )}
+//                   </Field>
+//                   <Field name="firstname">
+//                     {({ field }) => (
+//                       <Flex
+//                         flexDirection="column"
+//                         alignItems="flex-start"
+//                         gap="8px"
+//                         mt="14px"
+//                       >
+//                         <FormLabel
+//                           htmlFor="firstname"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                           lineHeight="normal"
+//                           letterSpacing="-0.14px"
+//                         >
+//                           Password
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="password"
+//                           type="password"
+//                           fontFamily="Ubuntu"
+//                           placeholder="Enter your password"
+//                           width={{ base: "100%", md: "350px" }}
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                           background="white"
+//                           color="black"
+//                           _placeholder={{ color: "gray.500" }}
+//                         />
+//                       </Flex>
+//                     )}
+//                   </Field>
+//                   <Flex mt="32px">
+//                     <Flex alignItems="center" gap="10px">
+//                       <Checkbox
+//                         name="terms"
+//                         borderColor="black"
+//                         width="24px"
+//                         height="24px"
+//                         borderWidth="2px"
+//                         borderStyle="solid"
+//                         borderColor="blue"
+//                         color="rgba(0, 0, 0, 0.70)"
+//                       />
+//                       <Text
+//                         color="rgba(0, 0, 0, 0.70)"
+//                         fontFamily="Ubuntu"
+//                         fontSize="14px"
+//                         fontWeight="400"
+//                         lineHeight="normal"
+//                         letterSpacing="-0.16px"
+//                       >
+//                         I have read and agree to the{" "}
+//                         <Text as="span" color="#574CB1" fontWeight="600">
+//                           Terms and Conditions
+//                         </Text>
+//                       </Text>
+//                     </Flex>
+//                   </Flex>
+//                   <Button
+//                     type="submit"
+//                     display="flex"
+//                     width={{ base: "100%", md: "350px" }}
+//                     padding="16px"
+//                     justifyContent="center"
+//                     alignItems="center"
+//                     gap="8px"
+//                     fontFamily="Ubuntu"
+//                     borderRadius="16px"
+//                     background="#574CB1"
+//                     height="7vh"
+//                     color="#FFF"
+//                     mt="32px"
+//                   >
+//                     Signup
+//                   </Button>
+//                   <Button
+//                     type="button"
+//                     display="flex"
+//                     width={{ base: "100%", md: "350px" }}
+//                     padding="16px"
+//                     justifyContent="center"
+//                     alignItems="center"
+//                     gap="8px"
+//                     fontFamily="Ubuntu"
+//                     borderRadius="6px"
+//                     height="7vh"
+//                     color="black"
+//                     border="1px solid black"
+//                     mt="32px"
+//                   >
+//                     <Icon as={FaGoogle} />
+//                     Signip with Google
+//                   </Button>
+//                   <Box
+//                     display="flex"
+//                     flexDirection="column"
+//                     alignItems="center"
+//                     gap="12px"
+//                     mt="32px"
+//                   >
+//                     <Text
+//                       fontFamily="Ubuntu"
+//                       fontSize="16px"
+//                       fontStyle="normal"
+//                       lineHeight="normal"
+//                       letterSpacing="-0.16px"
+//                       color="var(--Secondary-Text, #8798AD)" // Apply CSS color to the text
+//                       fontWeight="400" // Apply font weight to the text
+//                       textEdge="cap" // Apply text edge property
+//                       leadingTrim="both" // Apply leading trim property
+//                     >
+//                       Already a user?{" "}
+//                       <Text
+//                         as="span"
+//                         color="#574CB1" // Apply different color to the word "Login"
+//                         fontWeight="600" // Apply different font weight to the word "Login"
+//                       >
+//                         Login
+//                       </Text>
+//                     </Text>
+//                     <Box
+//                       display="flex"
+//                       flexDirection="column"
+//                       alignItems="center"
+//                       gap="12px"
+//                     >
+//                       <Text
+//                         fontFamily="Ubuntu"
+//                         fontSize="16px"
+//                         fontStyle="normal"
+//                         lineHeight="normal"
+//                         letterSpacing="-0.16px"
+//                         color="var(--Secondary-Text, #8798AD)" // Apply CSS color to the text
+//                         fontWeight="400" // Apply font weight to the text
+//                         textEdge="cap" // Apply text edge property
+//                         leadingTrim="both" // Apply leading trim property
+//                       >
+//                         By clicking ‘Sign Up’ you agree to our{" "}
+//                         <Text
+//                           as="span"
+//                           color="#574CB1" // Apply different color to the word "Login"
+//                           fontWeight="600" // Apply different font weight to the word "Login"
+//                         >
+//                           Terms of Use
+//                         </Text>
+//                       </Text>
+//                     </Box>
+//                   </Box>
+//                 </Stack>
+//               </Form>
+//             )}
+//           </Formik>
+//         </Stack>
+//       </Box>
+//       <Flex
+//         flexDirection="column"
+//         alignItems="center"
+//         justifyContent="center"
+//         width={{ base: "100%", md: "auto" }}
+//       >
+//         <Box
+//           width={{ base: "100%", md: "480px" }}
+//           height="260px"
+//           borderRadius="14px"
+//           marginBottom="20px"
+//           marginRight={{ base: "0", md: "100px" }}
+//           padding="20px"
+//           display="flex"
+//           alignItems="center"
+//           justifyContent="center"
+//         >
+//           <Img src="/images/logo.svg" width="50%" />
+//         </Box>
+
+//         {/* Text */}
+//         <Box
+//           color="#FFF"
+//           fontFamily="Manrope"
+//           fontSize="32px"
+//           fontWeight="600"
+//           letterSpacing="0.96px"
+//           textAlign="center"
+//           marginBottom="20px"
+//           width={{ base: "100%", md: "auto" }}
+//         >
+//           {/* Text below the logo */}
+//         </Box>
+
+//         <Box
+//           color="rgba(255, 255, 255, 0.60)"
+//           fontFamily="Manrope"
+//           fontSize="24px"
+//           fontWeight="400"
+//           letterSpacing="0.72px"
+//           textAlign="center"
+//           lineHeight="1.5"
+//           maxWidth={{ base: "100%", md: "480px" }}
+//           marginRight={{ base: "0", md: "90px" }}
+//         >
+//           <Heading as="h3" color="#FFFFFF">
+//             Meet the New Trading Journal
+//           </Heading>
+//           <Text>
+//             Revolutionize your trading experience with our cutting-edge
+//             journaling software. Effortlessly track, analyze, and optimize your
+//             trades for success and growth.
+//           </Text>
+//         </Box>
+//       </Flex>
+//     </Flex>
+//   );
+// }
+
+// export default Signup;
+ 
+width={{ base: "100%", md: "50%" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "36px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "30px" }}
+      >
+ 
+width={{ base: "100%", md: "50%" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "36px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "30px" }}
+      >
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      minHeight="100vh"
+      padding={{ base: "20px", md: "57px" }}
+      alignItems="center"
+      justifyContent="center"
+      bg="#352E6B"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
+        <Stack spacing="20px">
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+            />
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "28px", md: "34.554px" }}
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          <Heading
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize={{ base: "28px", md: "32px" }}
+            fontWeight="600"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={4}>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="firstname"
+                          placeholder="Enter your first name"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="email"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="username"
+                          placeholder="Enter your username"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Flex alignItems="center" gap="10px">
+                    <Checkbox
+                      name="terms"
+                      colorScheme="blue"
+                      size="lg"
+                    />
+                    <Text
+                      color="rgba(0, 0, 0, 0.70)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="400"
+                    >
+                      I have read and agree to the{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms and Conditions
+                      </Text>
+                    </Text>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="24px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="24px"
+                    leftIcon={<FaGoogle />}
+                  >
+                    Signup with Google
+                  </Button>
+                  <Box textAlign="center" mt="24px">
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                    >
+                      Already a user?{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Login
+                      </Text>
+                    </Text>
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                      mt="8px"
+                    >
+                      By clicking ‘Sign Up’ you agree to our{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms of Use
+                      </Text>
+                    </Text>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      {/* Right side - Info Section */}
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          marginRight={{ base: "0", md: "100px" }}
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+
+        {/* Text */}
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize="32px"
+          fontWeight="600"
+          letterSpacing="0.96px"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          {/* Text below the logo */}
+        </Box>
+
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize="24px"
+          fontWeight="400"
+          letterSpacing="0.72px"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+          marginRight={{ base: "0", md: "90px" }}
+        >
+          <Heading as="h3" color="#FFFFFF">
+            Meet the New Trading Journal
+          </Heading>
+          <Text>
+            Revolutionize your trading experience with our cutting-edge
+            journaling software. Effortlessly track, analyze, and optimize your
+            trades for success and growth.
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      minHeight="100vh"
+      padding={{ base: "20px", md: "57px" }}
+      alignItems="center"
+      justifyContent="center"
+      bg="#352E6B"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
+        <Stack spacing="20px">
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+            />
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "28px", md: "34.554px" }}
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          <Heading
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize={{ base: "28px", md: "32px" }}
+            fontWeight="600"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={4}>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="firstname"
+                          placeholder="Enter your first name"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="email"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="username"
+                          placeholder="Enter your username"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Flex alignItems="center" gap="10px">
+                    <Checkbox
+                      name="terms"
+                      colorScheme="blue"
+                      size="lg"
+                    />
+                    <Text
+                      color="rgba(0, 0, 0, 0.70)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="400"
+                    >
+                      I have read and agree to the{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms and Conditions
+                      </Text>
+                    </Text>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="24px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="24px"
+                    leftIcon={<FaGoogle />}
+                  >
+                    Signup with Google
+                  </Button>
+                  <Box textAlign="center" mt="24px">
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                    >
+                      Already a user?{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Login
+                      </Text>
+                    </Text>
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                      mt="8px"
+                    >
+                      By clicking ‘Sign Up’ you agree to our{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms of Use
+                      </Text>
+                    </Text>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      {/* Right side - Info Section */}
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          marginRight={{ base: "0", md: "100px" }}
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+
+        {/* Text */}
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize="32px"
+          fontWeight="600"
+          letterSpacing="0.96px"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          {/* Text below the logo */}
+        </Box>
+
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize="24px"
+          fontWeight="400"
+          letterSpacing="0.72px"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+          marginRight={{ base: "0", md: "90px" }}
+        >
+          <Heading as="h3" color="#FFFFFF">
+            Meet the New Trading Journal
+          </Heading>
+          <Text>
+            Revolutionize your trading experience with our cutting-edge
+            journaling software. Effortlessly track, analyze, and optimize your
+            trades for success and growth.
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      minHeight="100vh"
+      padding={{ base: "20px", md: "57px" }}
+      alignItems="center"
+      justifyContent="center"
+      bg="#352E6B"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
+        <Stack spacing="20px">
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+            />
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "28px", md: "34.554px" }}
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          <Heading
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize={{ base: "28px", md: "32px" }}
+            fontWeight="600"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={4}>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="firstname"
+                          placeholder="Enter your first name"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="email"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="username"
+                          placeholder="Enter your username"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Flex alignItems="center" gap="10px">
+                    <Checkbox
+                      name="terms"
+                      colorScheme="blue"
+                      size="lg"
+                    />
+                    <Text
+                      color="rgba(0, 0, 0, 0.70)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="400"
+                    >
+                      I have read and agree to the{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms and Conditions
+                      </Text>
+                    </Text>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="24px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="24px"
+                    leftIcon={<FaGoogle />}
+                  >
+                    Signup with Google
+                  </Button>
+                  <Box textAlign="center" mt="24px">
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                    >
+                      Already a user?{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Login
+                      </Text>
+                    </Text>
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                      mt="8px"
+                    >
+                      By clicking ‘Sign Up’ you agree to our{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms of Use
+                      </Text>
+                    </Text>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      {/* Right side - Info Section */}
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          marginRight={{ base: "0", md: "100px" }}
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+
+        {/* Text */}
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize="32px"
+          fontWeight="600"
+          letterSpacing="0.96px"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          {/* Text below the logo */}
+        </Box>
+
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize="24px"
+          fontWeight="400"
+          letterSpacing="0.72px"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+          marginRight={{ base: "0", md: "90px" }}
+        >
+          <Heading as="h3" color="#FFFFFF">
+            Meet the New Trading Journal
+          </Heading>
+          <Text>
+            Revolutionize your trading experience with our cutting-edge
+            journaling software. Effortlessly track, analyze, and optimize your
+            trades for success and growth.
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      minHeight="100vh"
+      padding={{ base: "20px", md: "57px" }}
+      alignItems="center"
+      justifyContent="center"
+      bg="#352E6B"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
+        <Stack spacing="20px">
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+            />
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "28px", md: "34.554px" }}
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          <Heading
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize={{ base: "28px", md: "32px" }}
+            fontWeight="600"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={4}>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="firstname"
+                          placeholder="Enter your first name"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="email"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="username"
+                          placeholder="Enter your username"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Flex alignItems="center" gap="10px">
+                    <Checkbox
+                      name="terms"
+                      colorScheme="blue"
+                      size="lg"
+                    />
+                    <Text
+                      color="rgba(0, 0, 0, 0.70)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="400"
+                    >
+                      I have read and agree to the{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms and Conditions
+                      </Text>
+                    </Text>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="24px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="24px"
+                    leftIcon={<FaGoogle />}
+                  >
+                    Signup with Google
+                  </Button>
+                  <Box textAlign="center" mt="24px">
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                    >
+                      Already a user?{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Login
+                      </Text>
+                    </Text>
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                      mt="8px"
+                    >
+                      By clicking ‘Sign Up’ you agree to our{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms of Use
+                      </Text>
+                    </Text>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      {/* Right side - Info Section */}
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          marginRight={{ base: "0", md: "100px" }}
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+
+        {/* Text */}
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize="32px"
+          fontWeight="600"
+          letterSpacing="0.96px"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          {/* Text below the logo */}
+        </Box>
+
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize="24px"
+          fontWeight="400"
+          letterSpacing="0.72px"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+          marginRight={{ base: "0", md: "90px" }}
+        >
+          <Heading as="h3" color="#FFFFFF">
+            Meet the New Trading Journal
+          </Heading>
+          <Text>
+            Revolutionize your trading experience with our cutting-edge
+            journaling software. Effortlessly track, analyze, and optimize your
+            trades for success and growth.
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+ 
+// import {
+//   Box,
+//   Flex,
+//   Heading,
+//   Img,
+//   FormLabel,
+//   Text,
+//   Stack,
+//   Image,
+//   FormControl,
+//   Checkbox,
+//   Button,
+//   Icon,
+//   Input,
+// } from "@chakra-ui/react";
+// import { Field, Form, Formik } from "formik";
+// import { FaGoogle } from "react-icons/fa";
+// import React from "react";
+
+// function Signup() {
+//   return (
+//     <Flex
+//       direction={{ base: "column", md: "row" }}
+//       minHeight="100vh"
+//       padding={{ base: "20px", md: "57px" }}
+//       alignItems="center"
+//       justifyContent="center"
+//       bg="#352E6B"
+//     >
+//       {/* Left side - Sign Up Page */}
+//       <Box
+//         width={{ base: "100%", md: "480px" }}
+//         borderRadius="16px"
+//         border="1px solid rgba(0, 0, 0, 0.15)"
+//         bg="#FFF"
+//         padding={{ base: "20px", md: "35.8px" }}
+//         marginBottom={{ base: "40px", md: "0" }}
+//         marginRight={{ md: "60px" }}
+//       >
+//         <Stack spacing="20px">
+//           <Flex alignItems="center" gap="9.5px">
+//             <Image
+//               h="58px"
+//               w="62.1px"
+//               src="/images/logo.svg"
+//               alt=""
+//               loading="lazy"
+//             />
+//             <Text
+//               fontWeight="semibold"
+//               fontFamily="Ubuntu"
+//               fontSize={{ base: "28px", md: "34.554px" }}
+//               lineHeight="47.378px"
+//               letterSpacing="1.037px"
+//               color="rgba(0, 0, 0, 0.60)"
+//             >
+//               TradeRyt
+//             </Text>
+//           </Flex>
+//           <Heading
+//             color="rgba(0, 0, 0, 1)"
+//             fontFamily="Ubuntu"
+//             fontSize={{ base: "28px", md: "32px" }}
+//             fontWeight="600"
+//             letterSpacing="-0.32px"
+//           >
+//             Signup
+//           </Heading>
+//           <Formik
+//             initialValues={{
+//               email: "",
+//               username: "",
+//               password: "",
+//               firstname: "",
+//               terms: false,
+//             }}
+//             onSubmit={(values) => {
+//               console.log(values);
+//             }}
+//           >
+//             {({ handleSubmit }) => (
+//               <Form onSubmit={handleSubmit}>
+//                 <Stack spacing={4}>
+//                   <Field name="firstname">
+//                     {({ field }) => (
+//                       <FormControl>
+//                         <FormLabel
+//                           htmlFor="firstname"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                         >
+//                           First Name
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="firstname"
+//                           placeholder="Enter your first name"
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                         />
+//                       </FormControl>
+//                     )}
+//                   </Field>
+//                   <Field name="email">
+//                     {({ field }) => (
+//                       <FormControl>
+//                         <FormLabel
+//                           htmlFor="email"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                         >
+//                           Email
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="email"
+//                           type="email"
+//                           placeholder="Enter your email"
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                         />
+//                       </FormControl>
+//                     )}
+//                   </Field>
+//                   <Field name="username">
+//                     {({ field }) => (
+//                       <FormControl>
+//                         <FormLabel
+//                           htmlFor="username"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                         >
+//                           Username
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="username"
+//                           placeholder="Enter your username"
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                         />
+//                       </FormControl>
+//                     )}
+//                   </Field>
+//                   <Field name="password">
+//                     {({ field }) => (
+//                       <FormControl>
+//                         <FormLabel
+//                           htmlFor="password"
+//                           color="rgba(103, 103, 103, 0.60)"
+//                           fontFamily="Ubuntu"
+//                           fontSize="14px"
+//                           fontWeight="300"
+//                         >
+//                           Password
+//                         </FormLabel>
+//                         <Input
+//                           {...field}
+//                           id="password"
+//                           type="password"
+//                           placeholder="Enter your password"
+//                           height="6vh"
+//                           padding="10px"
+//                           borderRadius="3px"
+//                           border="1px solid rgba(103, 103, 103, 0.60)"
+//                         />
+//                       </FormControl>
+//                     )}
+//                   </Field>
+//                   <Flex alignItems="center" gap="10px">
+//                     <Checkbox
+//                       name="terms"
+//                       colorScheme="blue"
+//                       size="lg"
+//                     />
+//                     <Text
+//                       color="rgba(0, 0, 0, 0.70)"
+//                       fontFamily="Ubuntu"
+//                       fontSize="14px"
+//                       fontWeight="400"
+//                     >
+//                       I have read and agree to the{" "}
+//                       <Text as="span" color="#574CB1" fontWeight="600">
+//                         Terms and Conditions
+//                       </Text>
+//                     </Text>
+//                   </Flex>
+//                   <Button
+//                     type="submit"
+//                     width="100%"
+//                     padding="16px"
+//                     fontFamily="Ubuntu"
+//                     borderRadius="16px"
+//                     background="#574CB1"
+//                     height="7vh"
+//                     color="#FFF"
+//                     mt="24px"
+//                   >
+//                     Signup
+//                   </Button>
+//                   <Button
+//                     type="button"
+//                     width="100%"
+//                     padding="16px"
+//                     fontFamily="Ubuntu"
+//                     borderRadius="6px"
+//                     height="7vh"
+//                     color="black"
+//                     border="1px solid black"
+//                     mt="24px"
+//                     leftIcon={<FaGoogle />}
+//                   >
+//                     Signup with Google
+//                   </Button>
+//                   <Box textAlign="center" mt="24px">
+//                     <Text
+//                       fontFamily="Ubuntu"
+//                       fontSize="16px"
+//                       color="var(--Secondary-Text, #8798AD)"
+//                       fontWeight="400"
+//                     >
+//                       Already a user?{" "}
+//                       <Text as="span" color="#574CB1" fontWeight="600">
+//                         Login
+//                       </Text>
+//                     </Text>
+//                     <Text
+//                       fontFamily="Ubuntu"
+//                       fontSize="16px"
+//                       color="var(--Secondary-Text, #8798AD)"
+//                       fontWeight="400"
+//                       mt="8px"
+//                     >
+//                       By clicking ‘Sign Up’ you agree to our{" "}
+//                       <Text as="span" color="#574CB1" fontWeight="600">
+//                         Terms of Use
+//                       </Text>
+//                     </Text>
+//                   </Box>
+//                 </Stack>
+//               </Form>
+//             )}
+//           </Formik>
+//         </Stack>
+//       </Box>
+//       {/* Right side - Info Section */}
+//       <Flex
+//         flexDirection="column"
+//         alignItems="center"
+//         justifyContent="center"
+//         width={{ base: "100%", md: "auto" }}
+//       >
+//         <Box
+//           width={{ base: "100%", md: "480px" }}
+//           height="260px"
+//           borderRadius="14px"
+//           marginBottom="20px"
+//           marginRight={{ base: "0", md: "100px" }}
+//           padding="20px"
+//           display="flex"
+//           alignItems="center"
+//           justifyContent="center"
+//         >
+//           <Img src="/images/logo.svg" width="50%" />
+//         </Box>
+
+//         {/* Text */}
+//         <Box
+//           color="#FFF"
+//           fontFamily="Manrope"
+//           fontSize="32px"
+//           fontWeight="600"
+//           letterSpacing="0.96px"
+//           textAlign="center"
+//           marginBottom="20px"
+//           width={{ base: "100%", md: "auto" }}
+//         >
+//           {/* Text below the logo */}
+//         </Box>
+
+//         <Box
+//           color="rgba(255, 255, 255, 0.60)"
+//           fontFamily="Manrope"
+//           fontSize="24px"
+//           fontWeight="400"
+//           letterSpacing="0.72px"
+//           textAlign="center"
+//           lineHeight="1.5"
+//           maxWidth={{ base: "100%", md: "480px" }}
+//           marginRight={{ base: "0", md: "90px" }}
+//         >
+//           <Heading as="h3" color="#FFFFFF">
+//             Meet the New Trading Journal
+//           </Heading>
+//           <Text>
+//             Revolutionize your trading experience with our cutting-edge
+//             journaling software. Effortlessly track, analyze, and optimize your
+//             trades for success and growth.
+//           </Text>
+//         </Box>
+//       </Flex>
+//     </Flex>
+//   );
+// }
+
+// export default Signup;
+ 
+
+import { Stack, Flex, Image, Text, Heading, FormControl, FormLabel, Input, Checkbox, Button, Box } from "@chakra-ui/react";
+import { Formik, Form, Field } from "formik";
+import { FaGoogle } from "react-icons/fa";
+
+const SignupForm = () => (
+  <Box
+    minWidth="375px"
+    minHeight="667px"
+    padding="20px"
+    margin="0 auto"
+    maxWidth="100vw"
+    maxHeight="100vh"
+  >
+    <Stack spacing="20px">
+      <Flex alignItems="center" gap="9.5px">
+        <Image
+          h="58px"
+          w="62.1px"
+          src="/images/logo.svg"
+          alt=""
+          loading="lazy"
+        />
+        <Text
+          fontWeight="semibold"
+          fontFamily="Ubuntu"
+          fontSize={{ base: "28px", md: "34.554px" }}
+          lineHeight="47.378px"
+          letterSpacing="1.037px"
+          color="rgba(0, 0, 0, 0.60)"
+        >
+          TradeRyt
+        </Text>
+      </Flex>
+      <Heading
+        color="rgba(0, 0, 0, 1)"
+        fontFamily="Ubuntu"
+        fontSize={{ base: "28px", md: "32px" }}
+        fontWeight="600"
+        letterSpacing="-0.32px"
+      >
+        Signup
+      </Heading>
+      <Formik
+        initialValues={{
+          email: "",
+          username: "",
+          password: "",
+          firstname: "",
+          terms: false,
+        }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        {({ handleSubmit }) => (
+          <Form onSubmit={handleSubmit}>
+            <Stack spacing={4}>
+              <Field name="firstname">
+                {({ field }) => (
+                  <FormControl>
+                    <FormLabel
+                      htmlFor="firstname"
+                      color="rgba(103, 103, 103, 0.60)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="300"
+                    >
+                      First Name
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="firstname"
+                      placeholder="Enter your first name"
+                      height="6vh"
+                      padding="10px"
+                      borderRadius="3px"
+                      border="1px solid rgba(103, 103, 103, 0.60)"
+                    />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="email">
+                {({ field }) => (
+                  <FormControl>
+                    <FormLabel
+                      htmlFor="email"
+                      color="rgba(103, 103, 103, 0.60)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="300"
+                    >
+                      Email
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      height="6vh"
+                      padding="10px"
+                      borderRadius="3px"
+                      border="1px solid rgba(103, 103, 103, 0.60)"
+                    />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="username">
+                {({ field }) => (
+                  <FormControl>
+                    <FormLabel
+                      htmlFor="username"
+                      color="rgba(103, 103, 103, 0.60)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="300"
+                    >
+                      Username
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="username"
+                      placeholder="Enter your username"
+                      height="6vh"
+                      padding="10px"
+                      borderRadius="3px"
+                      border="1px solid rgba(103, 103, 103, 0.60)"
+                    />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="password">
+                {({ field }) => (
+                  <FormControl>
+                    <FormLabel
+                      htmlFor="password"
+                      color="rgba(103, 103, 103, 0.60)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="300"
+                    >
+                      Password
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="password"
+                      type="password"
+                      placeholder="Enter your password"
+                      height="6vh"
+                      padding="10px"
+                      borderRadius="3px"
+                      border="1px solid rgba(103, 103, 103, 0.60)"
+                    />
+                  </FormControl>
+                )}
+              </Field>
+              <Flex alignItems="center" gap="10px">
+                <Checkbox
+                  name="terms"
+                  colorScheme="blue"
+                  size="lg"
+                />
+                <Text
+                  color="rgba(0, 0, 0, 0.70)"
+                  fontFamily="Ubuntu"
+                  fontSize="14px"
+                  fontWeight="400"
+                >
+                  I have read and agree to the{" "}
+                  <Text as="span" color="#574CB1" fontWeight="600">
+                    Terms and Conditions
+                  </Text>
+                </Text>
+              </Flex>
+              <Button
+                type="submit"
+                width="100%"
+                padding="16px"
+                fontFamily="Ubuntu"
+                borderRadius="16px"
+                background="#574CB1"
+                height="7vh"
+                color="#FFF"
+                mt="24px"
+              >
+                Signup
+              </Button>
+              <Button
+                type="button"
+                width="100%"
+                padding="16px"
+                fontFamily="Ubuntu"
+                borderRadius="6px"
+                height="7vh"
+                color="black"
+                border="1px solid black"
+                mt="24px"
+                leftIcon={<FaGoogle />}
+              >
+                Signup with Google
+              </Button>
+              <Box textAlign="center" mt="24px">
+                <Text
+                  fontFamily="Ubuntu"
+                  fontSize="16px"
+                  color="var(--Secondary-Text, #8798AD)"
+                  fontWeight="400"
+                >
+                  Already a user?{" "}
+                  <Text as="span" color="#574CB1" fontWeight="600">
+                    Login
+                  </Text>
+                </Text>
+                <Text
+                  fontFamily="Ubuntu"
+                  fontSize="16px"
+                  color="var(--Secondary-Text, #8798AD)"
+                  fontWeight="400"
+                  mt="8px"
+                >
+                  By clicking ‘Sign Up’ you agree to our{" "}
+                  <Text as="span" color="#574CB1" fontWeight="600">
+                    Terms of Use
+                  </Text>
+                </Text>
+              </Box>
+            </Stack>
+          </Form>
+        )}
+      </Formik>
+    </Stack>
+  </Box>
+);
+
+export default SignupForm;
+ 
+<Flex
+//         flexDirection="column"
+//         alignItems="center"
+//         justifyContent="center"
+//         width={{ base: "100%", md: "auto" }}
+//       >
+//         <Box
+//           width={{ base: "100%", md: "480px" }}
+//           height="260px"
+//           borderRadius="14px"
+//           marginBottom="20px"
+//           padding="20px"
+//           display="flex"
+//           alignItems="center"
+//           justifyContent="center"
+//         >
+//           <Img src="/images/logo.svg" width="50%" />
+//         </Box>
+//         <Box
+//           color="#FFF"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "24px", md: "32px" }}
+//           fontWeight="600"
+//           textAlign="center"
+//           marginBottom="20px"
+//           width={{ base: "100%", md: "auto" }}
+//         >
+//           Meet the New Trading Journal
+//         </Box>
+//         <Box
+//           color="rgba(255, 255, 255, 0.60)"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "18px", md: "24px" }}
+//           fontWeight="400"
+//           textAlign="center"
+//           lineHeight="1.5"
+//           maxWidth={{ base: "100%", md: "480px" }}
+//         >
+//           Revolutionize your trading experience with our cutting-edge journaling software. Effortlessly track, analyze, and optimize your trades for success and growth.
+//         </Box>
+//       </Flex>
+ 
+ <Flex
+//         flexDirection="column"
+//         alignItems="center"
+//         justifyContent="center"
+//         width={{ base: "100%", md: "auto" }}
+//       >
+//         <Box
+//           width={{ base: "100%", md: "480px" }}
+//           height="260px"
+//           borderRadius="14px"
+//           marginBottom="20px"
+//           padding="20px"
+//           display="flex"
+//           alignItems="center"
+//           justifyContent="center"
+//         >
+//           <Img src="/images/logo.svg" width="50%" />
+//         </Box>
+//         <Box
+//           color="#FFF"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "24px", md: "32px" }}
+//           fontWeight="600"
+//           textAlign="center"
+//           marginBottom="20px"
+//           width={{ base: "100%", md: "auto" }}
+//         >
+//           Meet the New Trading Journal
+//         </Box>
+//         <Box
+//           color="rgba(255, 255, 255, 0.60)"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "18px", md: "24px" }}
+//           fontWeight="400"
+//           textAlign="center"
+//           lineHeight="1.5"
+//           maxWidth={{ base: "100%", md: "480px" }}
+//         >
+//           Revolutionize your trading experience with our cutting-edge journaling software. Effortlessly track, analyze, and optimize your trades for success and growth.
+//         </Box>
+//       </Flex>
+ 
+ <Flex
+//         flexDirection="column"
+//         alignItems="center"
+//         justifyContent="center"
+//         width={{ base: "100%", md: "auto" }}
+//       >
+//         <Box
+//           width={{ base: "100%", md: "480px" }}
+//           height="260px"
+//           borderRadius="14px"
+//           marginBottom="20px"
+//           padding="20px"
+//           display="flex"
+//           alignItems="center"
+//           justifyContent="center"
+//         >
+//           <Img src="/images/logo.svg" width="50%" />
+//         </Box>
+//         <Box
+//           color="#FFF"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "24px", md: "32px" }}
+//           fontWeight="600"
+//           textAlign="center"
+//           marginBottom="20px"
+//           width={{ base: "100%", md: "auto" }}
+//         >
+//           Meet the New Trading Journal
+//         </Box>
+//         <Box
+//           color="rgba(255, 255, 255, 0.60)"
+//           fontFamily="Manrope"
+//           fontSize={{ base: "18px", md: "24px" }}
+//           fontWeight="400"
+//           textAlign="center"
+//           lineHeight="1.5"
+//           maxWidth={{ base: "100%", md: "480px" }}
+//         >
+//           Revolutionize your trading experience with our cutting-edge journaling software. Effortlessly track, analyze, and optimize your trades for success and growth.
+//         </Box>
+//       </Flex>
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      display="inline-flex"
+      width="fill"
+      height="1080px"
+      padding="57px 0.616px 57px 57px"
+      alignItems="center"
+      gap="200.287px"
+      bg="#352E6B"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
+        <Stack spacing="20px">
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+            />
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "28px", md: "34.554px" }}
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          <Heading
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize={{ base: "28px", md: "32px" }}
+            fontWeight="600"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={4}>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="firstname"
+                          placeholder="Enter your first name"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="email"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="username"
+                          placeholder="Enter your username"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <FormControl>
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Flex alignItems="center" gap="10px">
+                    <Checkbox name="terms" colorScheme="blue" size="lg" />
+                    <Text
+                      color="rgba(0, 0, 0, 0.70)"
+                      fontFamily="Ubuntu"
+                      fontSize="14px"
+                      fontWeight="400"
+                    >
+                      I have read and agree to the{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms and Conditions
+                      </Text>
+                    </Text>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="24px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    width="100%"
+                    padding="16px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="24px"
+                    leftIcon={<FaGoogle />}
+                  >
+                    Signup with Google
+                  </Button>
+                  <Box textAlign="center" mt="24px">
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                    >
+                      Already a user?{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Login
+                      </Text>
+                    </Text>
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      color="var(--Secondary-Text, #8798AD)"
+                      fontWeight="400"
+                      mt="8px"
+                    >
+                      By clicking ‘Sign Up’ you agree to our{" "}
+                      <Text as="span" color="#574CB1" fontWeight="600">
+                        Terms of Use
+                      </Text>
+                    </Text>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      {/* Right side - Info Section */}
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize={{ base: "24px", md: "32px" }}
+          fontWeight="600"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          Meet the New Trading Journal
+        </Box>
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize={{ base: "18px", md: "24px" }}
+          fontWeight="400"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+        >
+          Revolutionize your trading experience with our cutting-edge journaling
+          software. Effortlessly track, analyze, and optimize your trades for
+          success and growth.
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+ 
+color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize={{ base: "18px", md: "24px" }}
+          fontWeight="400"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+ 
+color="#FFF"
+          fontFamily="Manrope"
+          fontSize={{ base: "24px", md: "32px" }}
+          fontWeight="600"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+ 
+ width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+ 
+width={{ base: "100%", md: "480px" }}
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+ 
+
+      display="inline-flex"
+      width="full"
+      height="1080px"
+      padding="57px 0.616px 57px 57px"
+      alignItems="center"
+      gap="180.287px"
+      bg="#352E6B"
+ 
+import {
+  Box,
+  Flex,
+  Heading,
+  Img,
+  FormLabel,
+  Text,
+  Stack,
+  Image,
+  FormControl,
+  Checkbox,
+  Button,
+  Icon,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { Input } from "@chakra-ui/react";
+import { FaGoogle } from "react-icons/fa";
+import React from "react";
+
+function Signup() {
+  return (
+    <Flex
+      display="inline-flex"
+      height="100%"
+      padding={{ base: "57px 5%", md: "57px 10.616px 57px 57px" }}
+      alignItems="center"
+      justifyContent="space-between"
+      gap="60.287px"
+      bg="#352E6B"
+      flexWrap="wrap"
+      width="full"
+    >
+      {/* Left side - Sign Up Page */}
+      <Box
+        width={{ base: "100%", md: "480px" }}
+        height="auto"
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding="20px"
+        marginBottom={{ base: "40px", md: "0" }}
+        position="relative"
+      >
+        {/* Content of the Sign Up Page */}
+        <Stack
+          direction="column"
+          alignItems="start"
+          justifyContent="start"
+          spacing="9.5px"
+          padding="35.8px"
+        >
+          <Flex alignItems="center" gap="9.5px">
+            <Image
+              h="58px"
+              w="62.1px"
+              src="/images/logo.svg"
+              alt=""
+              loading="lazy"
+              flexShrink="0"
+            />
+            {/* "TradeRyt" Heading */}
+            <Text
+              fontWeight="semibold"
+              fontFamily="Ubuntu"
+              fontSize="34.554px"
+              fontStyle="normal"
+              lineHeight="47.378px"
+              letterSpacing="1.037px"
+              color="rgba(0, 0, 0, 0.60)"
+              textAlign="left"
+              display="inline-block"
+            >
+              TradeRyt
+            </Text>
+          </Flex>
+          {/* Signup Heading */}
+          <Heading
+            as="h1"
+            color="rgba(0, 0, 0, 1)"
+            fontFamily="Ubuntu"
+            fontSize="32px"
+            fontWeight="600"
+            mt="40px"
+            letterSpacing="-0.32px"
+          >
+            Signup
+          </Heading>
+          {/* Signup Form */}
+          <Formik
+            initialValues={{
+              email: "",
+              username: "",
+              password: "",
+              firstname: "",
+              terms: false,
+            }}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <Stack spacing={1}>
+                  <Field name="name">
+                    {({ field }) => (
+                      <Flex
+                        flexDirection="column"
+                        alignItems="flex-start"
+                        gap="6px"
+                        mt="10px"
+                      >
+                        <FormLabel
+                          htmlFor="name"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                          lineHeight="normal"
+                          letterSpacing="-0.14px"
+                        >
+                          First Name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="name"
+                          type="text"
+                          fontFamily="Ubuntu"
+                          placeholder="Enter your first name"
+                          width={{ base: "100%", md: "350px" }}
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                          background="#FFF"
+                          color="black"
+                          _placeholder={{ color: "gray.500" }} // Placeholder color
+                        />
+                      </Flex>
+                    )}
+                  </Field>
+                  <Field name="username">
+                    {({ field }) => (
+                      <Flex
+                        flexDirection="column"
+                        alignItems="flex-start"
+                        gap="8px"
+                        mt="14px"
+                      >
+                        <FormLabel
+                          htmlFor="username"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                          lineHeight="normal"
+                          letterSpacing="-0.14px"
+                        >
+                          Email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          type="email"
+                          fontFamily="Ubuntu"
+                          placeholder="Enter your email"
+                          width={{ base: "100%", md: "350px" }}
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                          background="#FFF"
+                          color="black"
+                          _placeholder={{ color: "gray.500" }}
+                        />
+                      </Flex>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }) => (
+                      <Flex
+                        flexDirection="column"
+                        alignItems="flex-start"
+                        gap="8px"
+                        mt="14px"
+                      >
+                        <FormLabel
+                          htmlFor="password"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                          lineHeight="normal"
+                          letterSpacing="-0.14px"
+                        >
+                          Username
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="name"
+                          type="name"
+                          fontFamily="Ubuntu"
+                          placeholder="Enter your Username"
+                          width={{ base: "100%", md: "350px" }}
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                          background="#FFF"
+                          color="black"
+                          _placeholder={{ color: "gray.500" }}
+                        />
+                      </Flex>
+                    )}
+                  </Field>
+                  <Field name="firstname">
+                    {({ field }) => (
+                      <Flex
+                        flexDirection="column"
+                        alignItems="flex-start"
+                        gap="8px"
+                        mt="14px"
+                      >
+                        <FormLabel
+                          htmlFor="firstname"
+                          color="rgba(103, 103, 103, 0.60)"
+                          fontFamily="Ubuntu"
+                          fontSize="14px"
+                          fontWeight="300"
+                          lineHeight="normal"
+                          letterSpacing="-0.14px"
+                        >
+                          Password
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="password"
+                          type="password"
+                          fontFamily="Ubuntu"
+                          placeholder="Enter your password"
+                          width={{ base: "100%", md: "350px" }}
+                          height="6vh"
+                          padding="10px"
+                          borderRadius="3px"
+                          border="1px solid rgba(103, 103, 103, 0.60)"
+                          background="white"
+                          color="black"
+                          _placeholder={{ color: "gray.500" }}
+                        />
+                      </Flex>
+                    )}
+                  </Field>
+                  <Flex mt="32px">
+                    <Flex alignItems="center" gap="10px">
+                      <Checkbox
+                        name="terms"
+                        borderColor="black"
+                        width="24px"
+                        height="24px"
+                        borderWidth="2px"
+                        borderStyle="solid"
+                        borderColor="blue"
+                        color="rgba(0, 0, 0, 0.70)"
+                      />
+                      <Text
+                        color="rgba(0, 0, 0, 0.70)"
+                        fontFamily="Ubuntu"
+                        fontSize="14px"
+                        fontWeight="400"
+                        lineHeight="normal"
+                        letterSpacing="-0.16px"
+                      >
+                        I have read and agree to the{" "}
+                        <Text as="span" color="#574CB1" fontWeight="600">
+                          Terms and Conditions
+                        </Text>
+                      </Text>
+                    </Flex>
+                  </Flex>
+                  <Button
+                    type="submit"
+                    display="flex"
+                    width={{ base: "100%", md: "350px" }}
+                    padding="16px"
+                    justifyContent="center"
+                    alignItems="center"
+                    gap="8px"
+                    fontFamily="Ubuntu"
+                    borderRadius="16px"
+                    background="#574CB1"
+                    height="7vh"
+                    color="#FFF"
+                    mt="32px"
+                  >
+                    Signup
+                  </Button>
+                  <Button
+                    type="button"
+                    display="flex"
+                    width={{ base: "100%", md: "350px" }}
+                    padding="16px"
+                    justifyContent="center"
+                    alignItems="center"
+                    gap="8px"
+                    fontFamily="Ubuntu"
+                    borderRadius="6px"
+                    height="7vh"
+                    color="black"
+                    border="1px solid black"
+                    mt="32px"
+                  >
+                    <Icon as={FaGoogle} />
+                    Signip with Google
+                  </Button>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    gap="12px"
+                    mt="32px"
+                  >
+                    <Text
+                      fontFamily="Ubuntu"
+                      fontSize="16px"
+                      fontStyle="normal"
+                      lineHeight="normal"
+                      letterSpacing="-0.16px"
+                      color="var(--Secondary-Text, #8798AD)" // Apply CSS color to the text
+                      fontWeight="400" // Apply font weight to the text
+                      textEdge="cap" // Apply text edge property
+                      leadingTrim="both" // Apply leading trim property
+                    >
+                      Already a user?{" "}
+                      <Text
+                        as="span"
+                        color="#574CB1" // Apply different color to the word "Login"
+                        fontWeight="600" // Apply different font weight to the word "Login"
+                      >
+                        Login
+                      </Text>
+                    </Text>
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      gap="12px"
+                    >
+                      <Text
+                        fontFamily="Ubuntu"
+                        fontSize="16px"
+                        fontStyle="normal"
+                        lineHeight="normal"
+                        letterSpacing="-0.16px"
+                        color="var(--Secondary-Text, #8798AD)" // Apply CSS color to the text
+                        fontWeight="400" // Apply font weight to the text
+                        textEdge="cap" // Apply text edge property
+                        leadingTrim="both" // Apply leading trim property
+                      >
+                        By clicking ‘Sign Up’ you agree to our{" "}
+                        <Text
+                          as="span"
+                          color="#574CB1" // Apply different color to the word "Login"
+                          fontWeight="600" // Apply different font weight to the word "Login"
+                        >
+                          Terms of Use
+                        </Text>
+                      </Text>
+                    </Box>
+                  </Box>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      </Box>
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        width={{ base: "100%", md: "auto" }}
+      >
+        <Box
+          width={{ base: "100%", md: "480px" }}
+          height="260px"
+          borderRadius="14px"
+          marginBottom="20px"
+          marginRight={{ base: "0", md: "100px" }}
+          padding="20px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Img src="/images/logo.svg" width="50%" />
+        </Box>
+
+        {/* Text */}
+        <Box
+          color="#FFF"
+          fontFamily="Manrope"
+          fontSize="32px"
+          fontWeight="600"
+          letterSpacing="0.96px"
+          textAlign="center"
+          marginBottom="20px"
+          width={{ base: "100%", md: "auto" }}
+        >
+          {/* Text below the logo */}
+        </Box>
+
+        <Box
+          color="rgba(255, 255, 255, 0.60)"
+          fontFamily="Manrope"
+          fontSize="24px"
+          fontWeight="400"
+          letterSpacing="0.72px"
+          textAlign="center"
+          lineHeight="1.5"
+          maxWidth={{ base: "100%", md: "480px" }}
+          marginRight={{ base: "0", md: "90px" }}
+        >
+          <Heading as="h3" color="#FFFFFF">
+            Meet the New Trading Journal
+          </Heading>
+          <Text>
+            Revolutionize your trading experience with our cutting-edge
+            journaling software. Effortlessly track, analyze, and optimize your
+            trades for success and growth.
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Signup;
+
+ 
+
+import React from "react";
+import { Box, Heading, Text, Flex, Spacer } from "@chakra-ui/react";
+
+const Sidenav = ({ categories }) => {
+  return (
+    <Box>
+      <Heading size="lg" mb={4}>
+        Financial Dashboard
+      </Heading>
+      {categories.map((category) => (
+        <Box key={category.name} mb={4}>
+          <Flex alignItems="center" mb={2}>
+            <Box flexShrink={0}>
+              <Heading size="sm">{category.name}</Heading>
+            </Box>
+            <Spacer />
+            <Text color="gray.500">
+              {category.percentageChange > 0 ? "+" : ""}
+              {category.percentageChange * 100}%
+            </Text>
+          </Flex>
+          <Flex justifyContent="space-between">
+            <Text>Net Daily P&L:</Text>
+            <Text>{category.netDailyPL}</Text>
+          </Flex>
+          <Flex justifyContent="space-between" mt={2}>
+            <Text>Daily:</Text>
+            <Text>{category.daily}</Text>
+          </Flex>
+          <Flex justifyContent="space-between" mt={2}>
+            <Text>Weekly:</Text>
+            <Text>{category.weekly}</Text>
+          </Flex>
+          <Flex justifyContent="space-between" mt={2}>
+            <Text>Monthly:</Text>
+            <Text>{category.monthly}</Text>
+          </Flex>
+          <Flex justifyContent="space-between" mt={2}>
+            <Text>Previous Day:</Text>
+            <Text>{category.previousDay}</Text>
+          </Flex>
+        </Box>
+      ))}
+    </Box>
+  );
+};
+
+const categories = [
+  {
+    name: "Revenue",
+    netDailyPL: -10,
+    daily: 288.91,
+    weekly: 1865.54,
+    monthly: 7202.41,
+    percentageChange: 0.15,
+    previousDay: -12.5,
+  },
+  {
+    name: "Expenses",
+    netDailyPL: -50,
+    daily: 120.5,
+    weekly: 750.23,
+    monthly: 2800.12,
+    percentageChange: 0.05,
+    previousDay: -55,
+  },
+];
+
+export default Sidenav;
+ 
+FinancialDashboard
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Img,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <div>
+     <Box width="1920px">
+     <Stack
+        justify="space-between"
+        boxShadow="2xl"
+        maxW="258px"
+        h="1080px"
+        bg="#fff"
+      >
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48.14">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+                width=""
+              />
+              <Text
+                fontSize="26.625px"
+                fontStyle="600;"
+                textColor="rgba(0, 0, 0, 0.6)"
+              >
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35.86">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                display="flex"
+                _hover={{
+                  bg: "#F3F3F7",
+                  width: "90%",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon
+                    color="rgba(249, 186, 51, 1)"
+                    width="20px"
+                    height="24px"
+                    as={nav.icon}
+                  />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              display="flex"
+              _hover={{
+                bg: "#F3F3F7",
+                width: "90%",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon
+                  color="rgba(249, 186, 51, 1)"
+                  as={nav.icon}
+                  width="20px"
+                  height="24px"
+                />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+     </Box>
+    </div>
+  );
+}
+
+export default SideNav;
+
+ 
+div
+ 
 
       <Button
      

@@ -6,9 +6,9 @@ import { Container, Flex } from '@chakra-ui/react'
 function Dashboard() {
   return (
     <div>
-    <Flex>
+    {/* <Flex>
     <SideNav /> <TopNav />
-    </Flex>
+    </Flex> */}
     </div>
   )
 }

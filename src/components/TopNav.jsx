@@ -31,7 +31,7 @@ function TopNav() {
     <Box
       width="100%"
       height="90px"
-    //   border="1px solid #DEDEDE"
+    //   border="1px solid #DE
       padding="52px"
       bg="#FFF;"
       alignItems="center"

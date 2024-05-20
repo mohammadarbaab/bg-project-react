@@ -10,7 +10,7 @@ import {
   Checkbox,
   Button,
   Input,
-  Image
+  Image,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import { FaGoogle } from "react-icons/fa";
@@ -29,12 +29,13 @@ function Signup() {
       {/* Left side - Sign Up Page */}
       <Box
         width="480px" // Fixed width for the signup box
-    borderRadius="16px"
-    border="1px solid rgba(0, 0, 0, 0.15)"
-    bg="#FFF"
-    padding={{ base: "20px", md: "35.8px" }}
-    marginBottom={{ base: "40px", md: "0" }}
-    marginRight={{ md: "60px" }}>
+        borderRadius="16px"
+        border="1px solid rgba(0, 0, 0, 0.15)"
+        bg="#FFF"
+        padding={{ base: "20px", md: "35.8px" }}
+        marginBottom={{ base: "40px", md: "0" }}
+        marginRight={{ md: "60px" }}
+      >
         <Stack spacing="20px">
           <Flex alignItems="center" gap="9.5px">
             <Image
@@ -60,6 +61,7 @@ function Signup() {
             fontFamily="Ubuntu"
             fontSize={{ base: "24px", md: "28px" }}
             fontWeight="600"
+            mt='30px'
             letterSpacing="-0.32px"
           >
             Signup
@@ -178,11 +180,7 @@ function Signup() {
                     )}
                   </Field>
                   <Flex alignItems="center" gap="10px">
-                    <Checkbox
-                      name="terms"
-                      colorScheme="blue"
-                      size="lg"
-                    />
+                    <Checkbox name="terms" colorScheme="blue" size="lg" />
                     <Text
                       color="rgba(0, 0, 0, 0.70)"
                       fontFamily="Ubuntu"
@@ -242,8 +240,7 @@ function Signup() {
                       mt="8px"
                     >
                       By clicking ‘Sign Up’ you agree to our{" "}
-                      <Text as="span" color
-="#574CB1" fontWeight="600">
+                      <Text as="span" color="#574CB1" fontWeight="600">
                         Terms of Use
                       </Text>
                     </Text>
@@ -312,6 +309,3 @@ function Signup() {
 }
 
 export default Signup;
-
-
-

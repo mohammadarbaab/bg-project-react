@@ -1,3 +1,1672 @@
+import {
+  Flex,
+  Box,
+  Button,
+  HStack,
+  Img,
+  Icon,
+  Text,
+  Container,
+} from "@chakra-ui/react";
+import React from "react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+function TopNav({onOpen}) {
+  const buttons = [
+    {
+      text: "Symbol",
+    },
+    {
+      text: "Setup",
+    },
+    {
+      text: "Side",
+    },
+    {
+      icon: HiPlusCircle,
+      text: "Add",
+    },
+  ];
+  return (
+    <Box
+      width="100%"
+      height="90px"
+    //   border="1px solid #DE
+      padding="52px"
+      bg="#FFF;"
+      alignItems="center"
+      gap="16.42"
+      display="flex"
+      px="4"
+    >
+      <Box
+        width="403px"
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF;"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+      <Icon as={<FaBars />} onClick={onOpen} display={{
+        base:"block",
+        lg:"none"
+      }}/>
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD;"
+            width="100px" // Adjust width as needed
+            height="40px" // Adjust height as needed
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20.555px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons.icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px 0px 35px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000", // Black text color on hover
+          bg: "#FFF", // White background color on hover
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+      color="#FFF"
+      width="244px"
+      height="52px"
+      display="inline-flex"
+      border="1px solid #DEDEDE"
+      alignItems="center"
+      padding="0px 30px 0px 35px"
+      borderRadius="14px"
+      fontSize="16px"
+      gap="5px"
+      mt="38px"
+      bg="#FFF"
+      justifyContent="center"
+    >
+      <Img
+        src="images/02.svg"
+        borderRadius="full"
+        border="1px solid #DEDEDE"
+        width='44px'
+        height='44px'
+        boxSize="42px"
+        mr="2px"
+      />{" "}
+      {/* Assuming 02.svg is the image */}
+      <Text
+        color="black"
+        display="flex"
+        alignItems="center"
+        padding="10px 28px"
+        borderRadius="14px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+      >
+        My Portfolio
+        <Icon as={MdKeyboardArrowDown} color="black" />
+      </Text>
+    </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+import React from "react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import SideNav from "./SideNav";
+
+function Sidedrawer({ isOpen, onClose }) {
+  return (
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerBody>
+          <SideNav />
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
+export default Sidedrawer;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <Box width={{ base: "100%", lg: "258px" }} h="100vh" bg="#fff" boxShadow="2xl">
+      <Stack justify="space-between" h="100%">
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48px">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+              />
+              <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35px">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              _hover={{
+                bg: "#F3F3F7",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+    </Box>
+  );
+}
+
+export default SideNav;
+
+ 
+import {
+  Flex,
+  Box,
+  Button,
+  HStack,
+  Img,
+  Icon,
+  Text,
+  Container,
+} from "@chakra-ui/react";
+import React from "react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+function TopNav({onOpen}) {
+  const buttons = [
+    {
+      text: "Symbol",
+    },
+    {
+      text: "Setup",
+    },
+    {
+      text: "Side",
+    },
+    {
+      icon: HiPlusCircle,
+      text: "Add",
+    },
+  ];
+  return (
+    <Box
+      width="100%"
+      height="90px"
+    //   border="1px solid #DE
+      padding="52px"
+      bg="#FFF;"
+      alignItems="center"
+      gap="16.42"
+      display="flex"
+      px="4"
+    >
+      <Box
+        width="403px"
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF;"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+      <Icon as={<FaBars />} onClick={onOpen} display={{
+        base:"block",
+        lg:"none"
+      }}/>
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD;"
+            width="100px" // Adjust width as needed
+            height="40px" // Adjust height as needed
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20.555px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons.icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px 0px 35px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000", // Black text color on hover
+          bg: "#FFF", // White background color on hover
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+      color="#FFF"
+      width="244px"
+      height="52px"
+      display="inline-flex"
+      border="1px solid #DEDEDE"
+      alignItems="center"
+      padding="0px 30px 0px 35px"
+      borderRadius="14px"
+      fontSize="16px"
+      gap="5px"
+      mt="38px"
+      bg="#FFF"
+      justifyContent="center"
+    >
+      <Img
+        src="images/02.svg"
+        borderRadius="full"
+        border="1px solid #DEDEDE"
+        width='44px'
+        height='44px'
+        boxSize="42px"
+        mr="2px"
+      />{" "}
+      {/* Assuming 02.svg is the image */}
+      <Text
+        color="black"
+        display="flex"
+        alignItems="center"
+        padding="10px 28px"
+        borderRadius="14px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+      >
+        My Portfolio
+        <Icon as={MdKeyboardArrowDown} color="black" />
+      </Text>
+    </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+import React from "react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+
+function Sidedrawer({ isOpen, onClose }) {
+  return (
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerBody>
+          <SideNav />
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
+export default Sidedrawer;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Img,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <div>
+     <Box width="1920px" >
+     <Stack
+        justify="space-between"
+        boxShadow="2xl"
+        maxW="258px"
+        h="1080px"
+        bg="#fff"
+        display={{
+          base:"none",
+          lg:"flex"
+        }}
+      >
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48.14">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+                width=""
+              />
+              <Text
+                fontSize="26.625px"
+                fontStyle="600;"
+                textColor="rgba(0, 0, 0, 0.6)"
+              >
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35.86">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                display="flex"
+                _hover={{
+                  bg: "#F3F3F7",
+                  width: "90%",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon
+                    color="rgba(249, 186, 51, 1)"
+                    width="20px"
+                    height="24px"
+                    as={nav.icon}
+                  />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              display="flex"
+              _hover={{
+                bg: "#F3F3F7",
+                width: "90%",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon
+                  color="rgba(249, 186, 51, 1)"
+                  as={nav.icon}
+                  width="20px"
+                  height="24px"
+                />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+     </Box>
+    </div>
+  );
+}
+
+export default SideNav;
+
+ 
+import {
+  Flex,
+  Box,
+  Button,
+  HStack,
+  Img,
+  Icon,
+  Text,
+  Container,
+} from "@chakra-ui/react";
+import React from "react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+function TopNav({onOpen}) {
+  const buttons = [
+    {
+      text: "Symbol",
+    },
+    {
+      text: "Setup",
+    },
+    {
+      text: "Side",
+    },
+    {
+      icon: HiPlusCircle,
+      text: "Add",
+    },
+  ];
+  return (
+    <Box
+      width="100%"
+      height="90px"
+    //   border="1px solid #DE
+      padding="52px"
+      bg="#FFF;"
+      alignItems="center"
+      gap="16.42"
+      display="flex"
+      px="4"
+    >
+      <Box
+        width="403px"
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF;"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+      <Icon as={<FaBars />} onClick={onOpen} display={{
+        base:"block",
+        lg:"none"
+      }}/>
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD;"
+            width="100px" // Adjust width as needed
+            height="40px" // Adjust height as needed
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20.555px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons.icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px 0px 35px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000", // Black text color on hover
+          bg: "#FFF", // White background color on hover
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+      color="#FFF"
+      width="244px"
+      height="52px"
+      display="inline-flex"
+      border="1px solid #DEDEDE"
+      alignItems="center"
+      padding="0px 30px 0px 35px"
+      borderRadius="14px"
+      fontSize="16px"
+      gap="5px"
+      mt="38px"
+      bg="#FFF"
+      justifyContent="center"
+    >
+      <Img
+        src="images/02.svg"
+        borderRadius="full"
+        border="1px solid #DEDEDE"
+        width='44px'
+        height='44px'
+        boxSize="42px"
+        mr="2px"
+      />{" "}
+      {/* Assuming 02.svg is the image */}
+      <Text
+        color="black"
+        display="flex"
+        alignItems="center"
+        padding="10px 28px"
+        borderRadius="14px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+      >
+        My Portfolio
+        <Icon as={MdKeyboardArrowDown} color="black" />
+      </Text>
+    </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Img,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <div>
+     <Box width="1920px" >
+     <Stack
+        justify="space-between"
+        boxShadow="2xl"
+        maxW="258px"
+        h="1080px"
+        bg="#fff"
+      >
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48.14">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+                width=""
+              />
+              <Text
+                fontSize="26.625px"
+                fontStyle="600;"
+                textColor="rgba(0, 0, 0, 0.6)"
+              >
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35.86">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                display="flex"
+                _hover={{
+                  bg: "#F3F3F7",
+                  width: "90%",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon
+                    color="rgba(249, 186, 51, 1)"
+                    width="20px"
+                    height="24px"
+                    as={nav.icon}
+                  />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              display="flex"
+              _hover={{
+                bg: "#F3F3F7",
+                width: "90%",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon
+                  color="rgba(249, 186, 51, 1)"
+                  as={nav.icon}
+                  width="20px"
+                  height="24px"
+                />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+     </Box>
+    </div>
+  );
+}
+
+export default SideNav;
+
+ 
+import {
+  Flex,
+  Box,
+  Button,
+  HStack,
+  Img,
+  Icon,
+  Text,
+  Container,
+} from "@chakra-ui/react";
+import React from "react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+function TopNav({onOpen}) {
+  const buttons = [
+    {
+      text: "Symbol",
+    },
+    {
+      text: "Setup",
+    },
+    {
+      text: "Side",
+    },
+    {
+      icon: HiPlusCircle,
+      text: "Add",
+    },
+  ];
+  return (
+    <Box
+      width="100%"
+      height="90px"
+    //   border="1px solid #DE
+      padding="52px"
+      bg="#FFF;"
+      alignItems="center"
+      gap="16.42"
+      display="flex"
+      px="4"
+    >
+      <Box
+        width="403px"
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF;"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+      <Icon as={<FaBars />} onClick={onOpen} display={{
+        base:"block",
+        lg:"none"
+      }}/>
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD;"
+            width="100px" // Adjust width as needed
+            height="40px" // Adjust height as needed
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20.555px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons.icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px 0px 35px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000", // Black text color on hover
+          bg: "#FFF", // White background color on hover
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+      color="#FFF"
+      width="244px"
+      height="52px"
+      display="inline-flex"
+      border="1px solid #DEDEDE"
+      alignItems="center"
+      padding="0px 30px 0px 35px"
+      borderRadius="14px"
+      fontSize="16px"
+      gap="5px"
+      mt="38px"
+      bg="#FFF"
+      justifyContent="center"
+    >
+      <Img
+        src="images/02.svg"
+        borderRadius="full"
+        border="1px solid #DEDEDE"
+        width='44px'
+        height='44px'
+        boxSize="42px"
+        mr="2px"
+      />{" "}
+      {/* Assuming 02.svg is the image */}
+      <Text
+        color="black"
+        display="flex"
+        alignItems="center"
+        padding="10px 28px"
+        borderRadius="14px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+      >
+        My Portfolio
+        <Icon as={MdKeyboardArrowDown} color="black" />
+      </Text>
+    </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+
+import SideNav from "./SideNav";
+ 
+import React from "react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Button,
+} from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+
+function Sidedrawer({ isOpen, onClose }) {
+  return (
+    <div>
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+
+          <DrawerBody>
+            <SideNav /> 
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </div>
+  );
+}
+
+export default Sidedrawer;
+
+ 
+import React from "react";
+import Signup from './auth/Signup/Signup';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import Signin from './auth/Signin/Signin'
+import ForgetPassword from "./auth/ForgetPassword/ForgetPassword";
+import Dashboardlayout from "./components/Dashboardlayout";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboardlayout />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/forget-password" element={<ForgetPassword />}/>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+ 
+<DrawerFooter>
+            <Button variant='outline' mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme='blue'>Save</Button>
+          </DrawerFooter>
+ 
+
+          <DrawerHeader>Create your account</DrawerHeader>
+ 
+
+            <Input placeholder='Type here...' />
+ 
+
+import TopNav from './TopNav '
+ 
+ isOpen
+ 
+{title}
+ 
+title={title}
+ 
+{title}
+ 
+*/}
+ 
+ {/* 
+ 
+
+    <Box>
+      Dashboardlayout
+    </Box>
+ 
+
+import SideNav from '../../components/Sidenav'
+import TopNav from '../../components/TopNav'
+import { Container, Flex } from '@chakra-ui/react'
+ 
+
+        finalFocusRef={btnRef}
+ 
+
+<Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+        Open
+      </Button>
+ 
+
+            // textStyle="h1"
+            // leadingTrim="both"
+ 
+// Note: This may need to be handled differently depending on your styling framework
+ 
+// Note: This may need to be handled differently depending on your styling framework
+ 
+                      <Text textAlign="center">
+ 
+                      <Text textAlign="center">
+ 
+ <Link to="/signin">
+ 
+
+            <Text
+ 
+
+            >
+ 
+fontWeight="600"
+              fontFamily="Ubuntu"
+              fontSize={{ base: "24px", md: "34px" }}
+              lineHeight="47px"
+              letterSpacing="1px"
+              color="rgba(0, 0, 0, 0.60)"
+ 
+<Text fontWeight="medium" textStyle="h1" mt="4" textAlign="center">
+ 
+
+        </Card>
+ 
+
+         <Card mb={}>
+ 
+
+          mt
+ 
+
+                    justifyContent="center"
+ 
+alignContent="cen"
+ 
+1rem
+ 
+ <Input
+                          {...field}
+                          name="email"
+                          placeholder="enter your email"
+                          border="1px solid black"
+                          _placeholder={{ color: "black" }}
+                        />
+ 
+bg="wi"
+ 
+color="black"
+ 
+Reset password
+ 
+
+        </Box>
+ 
+
+        <Box>
+ 
+
+          <Text textStyle="p3" color="black.60" mt="4">
+            Enter Your email password for which amount you want reset your
+            password
+          </Text>
+ 
+
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
+ 
+
+          <Link to="/signin">
+            <Icon as={FaArrowLeft} boxSize="6" />
+          </Link>
+ 
+
+          <Link to="/signin">
+            <Icon as={FaArrowLeft} boxSize="6" />
+          </Link>
+ 
+import React from 'react'
+
+function ForgetPassword() {
+  return (
+    <>
+        
+    </>
+  )
+}
+
+export default ForgetPassword
+
+ 
+
+    <div>
+      
+    </div>
+ 
+// Renamed BrowserRouter as Router
+import Signin from "./auth/Signup/Signin";
+ 
+gba(103, 103, 103, 0.60)
+ 
+{...field}
+                            id="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            height="6vh"
+                            padding="10px"
+                            borderRadius="3px"
+                            border="1px solid rgba(103, 103, 103, 0.60)"
+ 
+
+                          />
+ 
+<Input
+ 
+
+                            id="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            height="6vh"
+                            padding="10px"
+                            borderRadius="3px"
+                            border="1px solid rgba(103, 103, 103, 0.60)"
+ 
+{...field}
+ 
+rgba(103, 103, 103, 0.60);
+ 
+ <Input
+                            {...field}
+                            id="email"
+                            type="email"
+                            placeholder="Enter your email"
+                            height="6vh"
+                            padding="10px"
+                            borderRadius="3px"
+                            border="1px solid rgba(103, 103, 103, 0.60);"
+                          />
+ 
+1px solid rgba(103, 103, 103, 0.60)
+ 
+colorScheme="blue" 
+ 
+ml="2px"
+ 
+
+                        gap="5px"
+ 
+
+                        gap=
+ 
+By clicking ‘Sign Up’ you agree to our{" "}
+ 
+signup
+ 
+Already a user
+ 
+
+    <Router> {/* Wrap your App component with BrowserRouter */}
+ 
+
+    </Router>
+ 
+import React from "react";
+import Signup from './auth/Signup/Signup'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signin from "./auth/Signup/Signin";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+ 
+import React from "react";
+import Signup from './auth/Signup/Signup'
+import {Router,Routes,Route,} from "react-router-dom";
+import Signin from "./auth/Signup/Signin";
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+ 
+createBrowserRouter
+ 
+RouterProvider 
+ 
+
+const router=createBrowserRouter([
+  {
+    path: "/signun",
+    element: <Signup />,
+  },{
+    path: "/signin",
+    element: <Signin />,
+  }
+]);
+
+ 
+
+    <div>
+    <Router>
+    <RouterProvider router={router}/>
+    </Router>
+    </div>
+ 
+import React from "react";
+import Signup from './auth/Signup/Signup'
+import { createBrowserRouter,Router,RouterProvider } from "react-router-dom";
+import Signin from "./auth/Signup/Signin";
+const router=createBrowserRouter([
+  {
+    path: "/signun",
+    element: <Signup />,
+  },{
+    path: "/signin",
+    element: <Signin />,
+  }
+]);
+
+function App() {
+  return (
+    <div>
+    <Router>
+    <RouterProvider router={router}/>
+    </Router>
+    </div>
+  );
+}
+
+export default App;
+
+ 
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+ 
+
+                    <Field name="username">
+                      {({ field }) => (
+                        <FormControl>
+                          <FormLabel
+                            htmlFor="username"
+                            color="rgba(103, 103, 103, 0.60)"
+                            fontFamily="Ubuntu"
+                            fontSize="14px"
+                            fontWeight="300"
+                          >
+                            Username
+                          </FormLabel>
+                          <Input
+                            {...field}
+                            id="username"
+                            placeholder="Enter your username"
+                            height="6vh"
+                            padding="10px"
+                            borderRadius="3px"
+                            border="1px solid rgba(103, 103, 103, 0.60)"
+                          />
+                        </FormControl>
+                      )}
+                    </Field>
+ 
+<Field name="firstname">
+                      {({ field }) => (
+                        <FormControl>
+                          <FormLabel
+                            htmlFor="firstname"
+                            color="rgba(103, 103, 103, 0.60)"
+                            fontFamily="Ubuntu"
+                            fontSize="14px"
+                            fontWeight="300"
+                          >
+                            First Name
+                          </FormLabel>
+                          <Input
+                            {...field}
+                            id="firstname"
+                            placeholder="Enter your first name"
+                            height="6vh"
+                            padding="10px"
+                            borderRadius="3px"
+                            border="1px solid rgba(103, 103, 103, 0.60)"
+                          />
+                        </FormControl>
+                      )}
+                    </Field>
+ 
+
+                firstname: "",
+ 
+
+                username: "",
+ 
+ResetPassword
+ 
+resetpassword
+ 
+resetpasswordsuccess
+ 
+
+  et />,
+  },
+ 
+{
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/transactions",
+    element: <TransactionPage />,
+  },
+  {
+    path: "/support",
+    element: <Support />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/registerverifyemail",
+    element: <RegisterEmailVerify />,
+  },
+  {
+    path: "/registersuccess",
+    element: <RegisterSuccess />,
+  },
+  {
+    path: "/forgetpassword",
+    element: <ForgetPassword />,
+  },
+  {
+    path: "/forgetpasswordreset",
+    element: <ForgetPasswordRes
+ 
+
+    <Signup />
+ 
+
+    {/* <Dashboard /> */}
+ 
+
+import Dashboard from "./pages/Dashboard/Dashboard";
+ 
 
               m
  

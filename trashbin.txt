@@ -1,3 +1,4884 @@
+
+import { Box } from "@chakra-ui/react"; // Import Box from Chakra UI
+ 
+
+export default GraphBox;
+ 
+
+function GraphBox() {
+  return (
+      <Graph />
+  );
+ 
+
+      w="645px"
+      h="200px"
+      borderRadius="14px"
+      textColor="black"
+      border="1px solid rgba(222, 222, 222, 0.70);"
+      justifySelf="center"
+      bg="#FFF"
+      ml="20.16px"
+      overflow="hidden"
+      p="15px" // Added padding around the box
+ 
+import React from "react";
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+];
+
+function Graph() {
+  const options = {
+    chart: {
+      // Adjust padding as needed
+      padding: {
+        top: 15,
+        bottom: 15,
+        left: 15,
+        right: 15
+      }
+    }
+  };
+
+  return (
+    <Chart
+      chartType="Bar"
+      width="100%"
+      height="180px"
+      data={data}
+      options={options}
+    />
+  );
+}
+
+export default Graph;
+
+ 
+import React from "react";
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+];
+
+function Graph() {
+  const options = {
+    chart: {
+      // Adjust padding as needed
+      padding: {
+        top: 15,
+        bottom: 15,
+        left: 15,
+        right: 15
+      }
+    }
+  };
+
+  return (
+    <Chart
+      chartType="Bar"
+      width="100%"
+      height="180px"
+      data={data}
+      options={options}
+    />
+  );
+}
+
+export default Graph;
+
+ 
+import React from "react";
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+];
+
+
+function Graph() {
+  return (
+    <Chart
+      chartType="Bar"
+      width="100%"
+      height="400px"
+      data={data}
+      // options={options}
+    />
+  );
+}
+export default Graph
+
+ 
+"2015",
+ 
+"2014",
+ 
+"Year",
+ 
+
+export const data = [
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+];
+
+ 
+
+  
+];
+
+ 
+
+export const data = [
+ 
+
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+ 
+"Sales", "Expenses", "Profit"
+ 
+
+  ["Year", "Sales", "Expenses", "Profit"],
+ 
+
+// export const options = {
+//   chart: {
+//     title: "Company Performance",
+//     subtitle: "Sales, Expenses, and Profit: 2014-2017",
+//   },
+// };
+ 
+export
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Line,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { uv: 4000, pv: -2400, amt: -2400 },
+  { uv: -3000, pv: -1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: -2390, pv: -3800, amt: 2500 },
+  { uv: -3490, pv: 4300, amt: 2100 },
+  { uv: -4000, pv: -2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+  { uv: 4000, pv: 2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart data={data}>
+          {/* Custom Grid Lines */}
+          <Line type="horizontal" y={0} stroke="#DEDEDE" strokeWidth={1} />
+          <Line type="horizontal" y={30} stroke="#DEDEDE" strokeWidth={1} />
+          <Line type="horizontal" y={60} stroke="#DEDEDE" strokeWidth={1} />
+          <Line type="horizontal" y={90} stroke="#DEDEDE" strokeWidth={1} />
+          {/* End of Custom Grid Lines */}
+          <Tooltip />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { uv: 4000, pv: -2400, amt: -2400 },
+  { uv: -3000, pv: -1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: -2390, pv: -3800, amt: 2500 },
+  { uv: -3490, pv: 4300, amt: 2100 },
+  { uv: -4000, pv: -2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+  { uv: 4000, pv: 2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart data={data}>
+          <Tooltip />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { uv: 4000, pv: -2400, amt: -2400 },
+  { uv: -3000, pv: -1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: -2390, pv: -3800, amt: 2500 },
+  { uv: -3490, pv: 4300, amt: 2100 },
+  { uv: -4000, pv: -2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+  { uv: 4000, pv: 2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { uv: 4000, pv: -2400, amt: -2400 },
+  { uv: -3000, pv: -1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: -2390, pv: -3800, amt: 2500 },
+  { uv: -3490, pv: 4300, amt: 2100 },
+  { uv: -4000, pv: -2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+  { uv: 4000, pv: 2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart
+          data={data}
+        >
+          <CartesianGrid  strokeDasharray="3 3" />
+          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+          <YAxis
+            ticks={[-15000, -10000, 0, 10000, 15000]}
+            tick={{ fontSize: 10 }}
+          />
+          <Tooltip />
+          {/* <ReferenceLine y={0} stroke="#000" /> */}
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+stroke="#cdd"
+ 
+<CartesianGrid strokeDasharray="3 3" />
+ 
+
+  { uv: -4000, pv: -2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+  { uv: 4000, pv: 2400, amt: 2400 },
+  { uv: -3000, pv: 1398, amt: 2210 },
+  { uv: -2000, pv: -9800, amt: 2290 },
+  { uv: 2780, pv: 3908, amt: 2000 },
+  { uv: -1890, pv: 4800, amt: 2181 },
+  { uv: 2390, pv: -3800, amt: 2500 },
+  { uv: 3490, pv: 4300, amt: 2100 },
+ 
+
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { name: 'A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'B', uv: -3000, pv: 1398, amt: 2210 },
+  { name: 'C', uv: -2000, pv: -9800, amt: 2290 },
+  { name: 'D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'E', uv: -1890, pv: 4800, amt: 2181 },
+  { name: 'F', uv: 2390, pv: -3800, amt: 2500 },
+  { name: 'G', uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart
+          data={data}
+          // margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+          <YAxis domain={[-15000, 15000]} tick={{ fontSize: 12 }} />
+          <Tooltip />
+          <ReferenceLine y={0} stroke="#000" />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { name: 'A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'B', uv: -3000, pv: 1398, amt: 2210 },
+  { name: 'C', uv: -2000, pv: -9800, amt: 2290 },
+  { name: 'D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'E', uv: -1890, pv: 4800, amt: 2181 },
+  { name: 'F', uv: 2390, pv: -3800, amt: 2500 },
+  { name: 'G', uv: 3490, pv: 4300, amt: 2100 },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart
+          data={data}
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis domain={[-15000, 15000]} />
+          <Tooltip />
+          <Legend />
+          <ReferenceLine y={0} stroke="#000" />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph;
+
+ 
+
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  {
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    uv: -3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    uv: -2000,
+    pv: -9800,
+    amt: 2290,
+  },
+  {
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    uv: -1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    uv: 2390,
+    pv: -3800,
+    amt: 2500,
+  },
+  {
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/p/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={400}
+          height={300}
+          data={data}
+          margin={{
+            //no margin at this time
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <ReferenceLine y={0} stroke="#000" />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph
+ 
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Brush,
+  ReferenceLine,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  { name: '1', uv: 300, pv: 456 },
+  { name: '2', uv: -145, pv: 230 },
+  { name: '3', uv: -100, pv: 345 },
+  { name: '4', uv: -8, pv: 450 },
+  { name: '5', uv: 100, pv: 321 },
+  { name: '6', uv: 9, pv: 235 },
+  { name: '7', uv: 53, pv: 267 },
+  { name: '8', uv: 252, pv: -378 },
+  { name: '9', uv: 79, pv: -210 },
+  { name: '10', uv: 294, pv: -23 },
+  { name: '12', uv: 43, pv: 45 },
+  { name: '13', uv: -74, pv: 90 },
+  { name: '14', uv: -71, pv: 130 },
+  { name: '15', uv: -117, pv: 11 },
+  { name: '16', uv: -186, pv: 107 },
+  { name: '17', uv: -16, pv: 926 },
+  { name: '18', uv: -125, pv: 653 },
+  { name: '19', uv: 222, pv: 366 },
+  { name: '20', uv: 372, pv: 486 },
+  { name: '21', uv: 182, pv: 512 },
+  { name: '22', uv: 164, pv: 302 },
+  { name: '23', uv: 316, pv: 425 },
+  { name: '24', uv: 131, pv: 467 },
+  { name: '25', uv: 291, pv: -190 },
+  { name: '26', uv: -47, pv: 194 },
+  { name: '27', uv: -415, pv: 371 },
+  { name: '28', uv: -182, pv: 376 },
+  { name: '29', uv: -93, pv: 295 },
+  { name: '30', uv: -99, pv: 322 },
+  { name: '31', uv: -52, pv: 246 },
+  { name: '32', uv: 154, pv: 33 },
+  { name: '33', uv: 205, pv: 354 },
+  { name: '34', uv: 70, pv: 258 },
+  { name: '35', uv: -25, pv: 359 },
+  { name: '36', uv: -59, pv: 192 },
+  { name: '37', uv: -63, pv: 464 },
+  { name: '38', uv: -91, pv: -2 },
+  { name: '39', uv: -66, pv: 154 },
+  { name: '40', uv: -50, pv: 186 },
+];
+
+export default class Example extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/p/sandbox/bar-chart-with-brush-twqyp2';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
+          <ReferenceLine y={0} stroke="#000" />
+          <Brush dataKey="name" height={30} stroke="#8884d8" />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+ 
+
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+ 
+
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts';
+
+const data = [
+  {
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    uv: -3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    uv: -2000,
+    pv: -9800,
+    amt: 2290,
+  },
+  {
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    uv: -1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    uv: 2390,
+    pv: -3800,
+    amt: 2500,
+  },
+  {
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
+class Graph extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/p/sandbox/bar-chart-with-positive-negative-hnhn3v';
+
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={400}
+          height={300}
+          data={data}
+          margin={{
+            //no margin at this time
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <ReferenceLine y={0} stroke="#000" />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
+
+export default Graph
+ 
+// import React from 'react';
+// import { Bar } from 'react-chartjs-2';
+// import { Chart } from 'chart.js';
+// import { CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+// import { faker } from '@faker-js/faker';
+
+
+// Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+// const data = {
+//   labels: labels,
+//   datasets: [
+//     {
+//       label: 'Dataset 1',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(255, 99, 132)',
+//     },
+//     {
+//       label: 'Dataset 2',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(75, 192, 192)',
+//     },
+//     {
+//       label: 'Dataset 3',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(53, 162, 235)',
+//     },
+//   ],
+// };
+
+// const options = {
+//   plugins: {
+//     title: {
+//       display: true,
+//     },
+//   },
+//   responsive: true,
+//   scales: {
+//     x: {
+//       stacked: true,
+//     },
+//     y: {
+//       stacked: true,
+//     },
+//   },
+// };
+
+// function Graph() {
+//   return(
+// <div style={{ width: '80%', height: '100%' }}>
+//       <Bar data={data} options={options} />
+//     </div>
+//   )
+// }
+
+// export default Graph;
+ 
+
+    uv: 2780,
+    pv: 3908,
+ 
+
+    uv: -2000,
+    pv: -9800,
+ 
+
+    uv: -3000,
+    pv: 1398,
+ 
+
+    uv: 4000,
+    pv: 2400,
+ 
+
+    name: 'Page A',
+ 
+
+    name: 'Page G',
+ 
+
+    name: 'Page F',
+ 
+
+    name: 'Page E',
+ 
+
+    name: 'Page D',
+ 
+
+    name: 'Page C',
+ 
+
+    name: 'Page B',
+ 
+
+            // top: 5,
+            right: 30,
+            left: 20,
+            // bottom: 5,
+ 
+
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+ 
+import React from 'react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      // text: 'Chart.js Bar Chart - Stacked',  
+    },
+  },
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000, max:10000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000,max:10000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000,max:10000})),
+      backgroundColor: 'rgb(53, 162, 235)',
+      stack: 'Stack 1',
+    },
+  ],
+};
+
+function Graph() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          width: '596px',
+          height: '30px',
+          flexShrink: 0,
+          borderBottom: '1px solid #DEDEDE',
+          background: '#FFF',
+        }}
+      ></div>
+      <Bar options={options} data={data} />
+      <div
+        style={{
+          width: '6px',
+          height: '73px',
+          flexShrink: 0,
+          background: '#41B18F',
+        }}
+      ></div>
+    </div>
+  );
+}
+export default Graph
+
+ 
+import React from 'react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      // text: 'Chart.js Bar Chart - Stacked',  
+    },
+  },
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000, max:10000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000,max:10000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -5000,max:10000})),
+      backgroundColor: 'rgb(53, 162, 235)',
+      stack: 'Stack 1',
+    },
+  ],
+};
+
+function Graph() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          width: '596px',
+          height: '30px',
+          flexShrink: 0,
+          borderBottom: '1px solid #DEDEDE',
+          background: '#FFF',
+        }}
+      ></div>
+      <Bar options={options} data={data} />
+      <div
+        style={{
+          width: '6px',
+          height: '73px',
+          flexShrink: 0,
+          background: '#41B18F',
+        }}
+      ></div>
+    </div>
+  );
+}
+export default Graph
+
+ 
+ max: 1000,max:2000,max:3000
+ 
+ 10030000,max:2000,max:
+ 
+max: 1000,max:2000,max:3000
+ 
+min: -1000, max: 1000 
+ 
+min: -1000, max: 1000
+ 
+
+  labels,
+ 
+
+      label: 'Dataset 3',
+ 
+
+      label: 'Dataset 2',
+ 
+
+      label: 'Dataset 1',
+ 
+
+
+import React from 'react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
+
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart - Stacked',
+    },
+  },
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+      ticks: {
+        stepSize: 5000,
+        callback: function (value) {
+          return value >= 0 ? value / 1000 + 'k' : '-' + Math.abs(value) / 1000 + 'k';
+        }
+      }
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+      stack: 'Stack 0',
+    },
+    {
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(53, 162, 235)',
+      stack: 'Stack 1',
+    },
+  ],
+};
+
+function Graph() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          width: '596px',
+          height: '30px',
+          flexShrink: 0,
+          borderBottom: '1px solid #DEDEDE',
+          background: '#FFF',
+        }}
+      ></div>
+      <Bar options={options} data={data} />
+      <div
+        style={{
+          width: '6px',
+          height: '73px',
+          flexShrink: 0,
+          background: '#41B18F',
+        }}
+      ></div>
+    </div>
+  );
+}
+export default Graph
+ 
+App
+ 
+export 
+ 
+
+import faker from 'faker';
+ 
+// import React from 'react';
+// import { Bar } from 'react-chartjs-2';
+// import { Chart } from 'chart.js';
+// import { CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+// import { faker } from '@faker-js/faker';
+
+
+// Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+// const data = {
+//   labels: labels,
+//   datasets: [
+//     {
+//       label: 'Dataset 1',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(255, 99, 132)',
+//     },
+//     {
+//       label: 'Dataset 2',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(75, 192, 192)',
+//     },
+//     {
+//       label: 'Dataset 3',
+//       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+//       backgroundColor: 'rgb(53, 162, 235)',
+//     },
+//   ],
+// };
+
+// const options = {
+//   plugins: {
+//     title: {
+//       display: true,
+//     },
+//   },
+//   responsive: true,
+//   scales: {
+//     x: {
+//       stacked: true,
+//     },
+//     y: {
+//       stacked: true,
+//     },
+//   },
+// };
+
+// function Graph() {
+//   return(
+// <div style={{ width: '80%', height: '100%' }}>
+//       <Bar data={data} options={options} />
+//     </div>
+//   )
+// }
+
+// export default Graph;
+
+import React from 'react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart - Stacked',
+    },
+  },
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 3',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(53, 162, 235)',
+      stack: 'Stack 1',
+    },
+  ],
+};
+
+function Graph() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          width: '596px',
+          height: '30px',
+          flexShrink: 0,
+          borderBottom: '1px solid #DEDEDE',
+          background: '#FFF',
+        }}
+      ></div>
+      <Bar options={options} data={data} />
+      <div
+        style={{
+          width: '6px',
+          height: '73px',
+          flexShrink: 0,
+          background: '#41B18F',
+        }}
+      ></div>
+    </div>
+  );
+}
+export default Graph
+ 
+export 
+ 
+
+import faker from 'faker';
+ 
+
+
+import { faker } from '@faker-js/faker';
+import React from 'react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart - Stacked',
+    },
+  },
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 3',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(53, 162, 235)',
+      stack: 'Stack 1',
+    },
+  ],
+};
+
+ function Graph() {
+  return <div style={{height:"10vh"}}>
+    <Bar options={options} data={data} />;
+  </div>
+}
+export default Graph
+
+ 
+export
+ 
+
+import faker from 'faker';
+ 
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { Chart } from 'chart.js';
+import { CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+
+
+
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+    },
+    {
+      label: 'Dataset 3',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(53, 162, 235)',
+    },
+  ],
+};
+
+const options = {
+  plugins: {
+    title: {
+      display: true,
+    },
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+function Graph() {
+  return(
+<div style={{ width: '80%', height: '100%' }}>
+      <Bar data={data} options={options} />
+    </div>
+  )
+}
+
+export default Graph;
+
+ 
+  <div style={{ width: '800px', height: '400px' }}>
+   <Bar data={data} options={options} />;
+  </div>
+ 
+
+      text: 'Chart.js Bar Chart - Stacked',
+ 
+
+  return <Bar data={data} options={options} />;
+ 
+ {Graph}
+ 
+
+import  Graph  from './graph/Chart';
+ 
+
+import faker from 'faker';
+ 
+import faker from 'faker';
+ 
+
+
+ 
+import faker from 'faker';
+ 
+mport faker from 'faker';
+ 
+import faker from 'faker';
+ 
+
+import { Graph } from "./graph/Chart";
+ 
+import React from 'react';
+import {
+  ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import faker from 'faker';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart - Stacked',
+    },
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(255, 99, 132)',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(75, 192, 192)',
+    },
+    {
+      label: 'Dataset 3',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      backgroundColor: 'rgb(53, 162, 235)',
+    },
+  ],
+};
+
+export function Graph() {
+  return <Bar options={options} data={data} />;
+}
+
+ 
+as chartjs
+ 
+
+import { Chart } from 'chart.js';
+ 
+
+import { Chart } from "chart.js";
+ 
+
+import { Chart } from "chart.js";
+ 
+// Specified padding></Box>
+ 
+// Specified paddin></Box>
+ 
+w="645px"
+          h="198px"
+          borderRadius="14px"
+          textColor="black"
+          border="1px solid rgba(222, 222, 222, 0.70);"
+          justifySelf="center"
+          bg="#FFF"
+          ml="20.16px"
+ 
+ w="685px"
+          h="362px"
+          borderRadius="14px"
+          textColor="black"
+          border="1px solid rgba(222, 222, 222, 0.70);"
+          bg="#FFF"
+          gap="8px"
+ 
+
+          padding="20.16px"
+ 
+padding="11.92px 19.84px 120.08px 20.16px"
+ 
+
+        </Box>
+ 
+// Adding left padding></Box>
+ 
+w="645px"
+          h="198px"
+          borderRadius="14px"
+          textColor="black"
+          border="1px solid rgba(222, 222, 222, 0.70);"
+          justifySelf="center"
+          bg="#FFF"
+          padding="11.92px 19.84px 20.08px 20.16px"
+ 
+
+        w="717px"
+        h="430px"
+        bg="white"
+        rounded="14px"
+        shadow="md"
+        p="16px" // Adding padding to ensure proper spacing
+ 
+w="717px"
+        h="430px"
+        bg="white"
+        rounded="14px"
+        shadow="md"
+        p="16px" // Adding 
+ 
+20.16px 20.08px 19.84px 11.92px
+ 
+
+          align="center"
+ 
+
+          gap="8px"
+ 
+
+            {Chart}
+ 
+
+            h="16vh"
+ 
+
+            mt="10px"
+ 
+
+        mt=""
+ 
+
+        borderColor="black" 
+ 
+
+        borderWidth="2px" 
+ 
+50%
+ 
+marginTop="10px"
+ 
+
+import { Graph } from "./graph/Chart";
+ 
+ as ChartJS,
+ 
+ as ChartJS,
+ 
+
+              bg="red"
+ 
+
+              w="294px"
+ 
+₹ 28,891
+ 
+
+                  Profit/ Loss
+ 
+
+            <Box
+              w="243px"
+              h="41px"
+              bg="gray"
+              display="inline-flex"
+              borderRadius="14px"
+              border="1px solid #DEDEDE"
+            >
+            </Box>
+ 
+
+                    15 % compared with last day
+ 
+display="flex"
+ 
+
+                  {upArrow}
+ 
+
+                  lineHeight="normal"
+ 
+Net Daily P&L
+ 
+
+              <Box
+                color="black"
+                fontSize="14px"
+                fontWeight="bold"
+                padding="8px"
+                fontFamily="Ubuntu"
+              >
+                {dashLogo}
+              </Box>
+ 
+
+              <Text fontSize="14px" fontStyle="normal" textColor="white" fontWeight="600" lineHeight="normal" fontFamily="Ubuntu">Daily</Text>
+              </Button>
+ 
+
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                borderRight="1px solid #DEDEDE;"
+                gap="10px"
+              >
+ 
+
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+                borderRight="1px solid #DEDEDE;">
+               <Text fontSize="14px" fontStyle="normal" textColor="white" fontWeight="600" lineHeight="normal" fontFamily="Ubuntu">Weekly</Text>
+              </Button>
+ 
+
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+              >
+                <Text fontSize="14px" fontStyle="normal" textColor="white" fontWeight="600" lineHeight="normal" fontFamily="Ubuntu">Monthly</Text>
+              </Button>
+ 
+
+              bg="yellow.200"
+ 
+
+                Daily 
+ 
+ Weekly
+ 
+color="var(--Primary-Text, #2E384D);"
+ 
+
+                border="1px solid #DEDEDE;"
+                bg="rgba(222, 222, 222, 0.60);"
+ 
+
+              alignItems="center"
+ 
+
+              justifyContent="center;"
+ 
+
+              padding="10px 16px 12px 16px;"
+ 
+
+              alignItems="flex-start"
+ 
+
+              display="flex"
+ 
+
+import {(Box, Button)} from "@chakra-ui/react";
+ 
+
+import { Button } from "@chakra-ui/react";
+ 
+
+
+            <Box w="243px" h="40px" bg="tomato" display="inline-flex" alignItems="flex-start" borderRadius="14px"  border="1px solid #DEDEDE">
+              
+            </Box>
+ 
+
+            <Box
+      w="243px"
+      h="40px"
+      bg="tomato"
+      display="inline-flex"
+      alignItems="center"
+      borderRadius="14px"
+      border="1px solid #DEDEDE"
+    >
+      {["daily", "weekly", "monthly"].map((period, index) => (
+        <Button
+          key={period}
+          sx={selected === period ? { ...buttonStyle, ...activeButtonStyle } : buttonStyle}
+          onClick={() => setSelected(period)}
+          borderRadius={index === 0 ? "14px 0 0 14px" : index === 2 ? "0 14px 14px 0" : "0"}
+          borderRight={index !== 2 ? "1px solid #DEDEDE" : "none"}
+        >
+          {period.charAt(0).toUpperCase() + period.slice(1)}
+        </Button>
+      ))}
+    </Box>
+ 
+
+  const [selected, setSelected] = useState("daily");
+  const buttonStyle = {
+    display: "flex",
+    width: "81px",
+    padding: "10px 16px 12px 16px",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+    borderRight: "1px solid #DEDEDE",
+    background: "rgba(255, 255, 255, 0.60)",
+    _hover: { background: "rgba(255, 255, 255, 0.80)" },
+    _active: { background: "white" },
+  };
+  const activeButtonStyle = {
+    background: "white",
+  };
+
+ 
+
+import { useState } from "react";
+import { Button } from "@chakra-ui/react";
+ 
+2
+ 
+
+          <St></St>
+ 
+
+                borderRadius="50%"
+ 
+
+            <Icon />
+ 
+
+              {dashLogo}
+ 
+
+              {/* {dashLogo} */}
+ 
+
+export default { upArrow, dashLogo };
+ 
+
+import upArrow from "../../asesst/svsg";
+ 
+
+import svgs from "../../asesst/svsg";
+ 
+
+
+const { upArrow, dashLogo } = svgs;
+ 
+
+import upArrow from "../../asesst/svsg";
+import dashLogo from "../../asesst/svsg";
+ 
+
+import {upArrow} from "../../asesst/svsg";
+import { dashLogo } from "../../asesst/svsg";
+ 
+
+                <Icon height="24px" width="24px" />
+ 
+
+                <Icon height="24px" width="24px" />
+ 
+const upArrow = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="15"
+    height="14"
+    viewBox="0 0 15 14"
+    fill="none"
+  >
+    <path
+      opacity="0.4"
+      d="M9.59879 1.16699H4.71046C2.58712 1.16699 1.32129 2.43283 1.32129 4.55616V9.43866C1.32129 11.5678 2.58712 12.8337 4.71046 12.8337H9.59296C11.7163 12.8337 12.9821 11.5678 12.9821 9.44449V4.55616C12.988 2.43283 11.7221 1.16699 9.59879 1.16699Z"
+      fill="#31D3A3"
+    />
+    <path
+      d="M9.92432 4.08301H7.10682C6.86766 4.08301 6.66932 4.28134 6.66932 4.52051C6.66932 4.75967 6.86766 4.95801 7.10682 4.95801H8.86849L4.36516 9.46134C4.19599 9.63051 4.19599 9.91051 4.36516 10.0797C4.45266 10.1672 4.56349 10.208 4.67432 10.208C4.78516 10.208 4.89599 10.1672 4.98349 10.0797L9.48682 5.57634V7.33801C9.48682 7.57717 9.68516 7.77551 9.92432 7.77551C10.1635 7.77551 10.3618 7.57717 10.3618 7.33801V4.52051C10.3618 4.28134 10.1635 4.08301 9.92432 4.08301Z"
+      fill="#31D3A3"
+    />
+  </svg>,
+];
+export default upArrow;
+
+const dashLogo=[<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<path d="M22.1597 6.5H15.1597C11.846 6.5 9.15967 9.18629 9.15967 12.5C9.15967 15.8137 11.846 18.5 15.1597 18.5H22.1597V20.5C22.1597 21.0523 21.712 21.5 21.1597 21.5H3.15967C2.60739 21.5 2.15967 21.0523 2.15967 20.5V4.5C2.15967 3.94772 2.60739 3.5 3.15967 3.5H21.1597C21.712 3.5 22.1597 3.94772 22.1597 4.5V6.5ZM15.1597 8.5H23.1597V16.5H15.1597C12.9505 16.5 11.1597 14.7091 11.1597 12.5C11.1597 10.2909 12.9505 8.5 15.1597 8.5ZM15.1597 11.5V13.5H18.1597V11.5H15.1597Z" fill="#F9BA33"/>
+</svg>]
+
+export default dashLogo
+ 
+
+import svg from "../../asesst/svsg";
+ 
+export default 
+ 
+<Box display="flex" alignItems="center" marginTop="-9px">
+                    {" "}
+                    {/* Adjusted margin here */}
+                    {svg}
+                    <Text
+                      color="black"
+                      fontSize="12px"
+                      fontWeight="400"
+                      lineHeight="normal"
+                      opacity="0.6"
+                      fontFamily="Manrope"
+                    >
+                      15 % compared with last day
+                    </Text>
+                </Box>
+ 
+
+export default svg=[<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path opacity="0.4" d="M9.59879 1.16699H4.71046C2.58712 1.16699 1.32129 2.43283 1.32129 4.55616V9.43866C1.32129 11.5678 2.58712 12.8337 4.71046 12.8337H9.59296C11.7163 12.8337 12.9821 11.5678 12.9821 9.44449V4.55616C12.988 2.43283 11.7221 1.16699 9.59879 1.16699Z" fill="#31D3A3"/>
+<path d="M9.92432 4.08301H7.10682C6.86766 4.08301 6.66932 4.28134 6.66932 4.52051C6.66932 4.75967 6.86766 4.95801 7.10682 4.95801H8.86849L4.36516 9.46134C4.19599 9.63051 4.19599 9.91051 4.36516 10.0797C4.45266 10.1672 4.56349 10.208 4.67432 10.208C4.78516 10.208 4.89599 10.1672 4.98349 10.0797L9.48682 5.57634V7.33801C9.48682 7.57717 9.68516 7.77551 9.92432 7.77551C10.1635 7.77551 10.3618 7.57717 10.3618 7.33801V4.52051C10.3618 4.28134 10.1635 4.08301 9.92432 4.08301Z" fill="#31D3A3"/>
+</svg>
+ 
+
+                  <svsg />
+ 
+<Icon width="14px" h="14px" />
+ 
+<Icon width="14px" h="14px" />
+ 
+<VStack display="flex" flexDirection="column" justifyContent="space-between" alignItems="flex-start">
+                <Text
+                  color="black"
+                  fontSize="18px"
+                  fontWeight="600"
+                  lineHeight="24px"
+                  fontFamily="Ubuntu"
+                >
+                  Net Daily P&L
+                </Text>
+                <Box display="flex" alignItems="center" gap="4px">
+                  <Icon width="14px" h="14px" />
+                  <Text
+                    color="black"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    15 % compared with last day
+                  </Text>
+                </Box>
+              </VStack>
+ 
+alignItems="center"
+ 
+Net Daily P&L
+ 
+ <Text color="black" fontSize="14px" fontWeight="bold" fontFamily="Manrope">Net Daily P&L</Text>
+ 
+Portfolio
+ 
+Overview
+ 
+1
+ 
+padding="
+ 
+spacing="24px"
+ 
+
+  <Box w='40px' h='40px' bg='pink.100'>
+    3
+  </Box>
+ 
+
+          <box></box>
+ 
+hello
+ 
+black
+ 
+
+          mt="24px" 
+ 
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import {
+  Text,
+  HStack,
+  Stack,
+  VStack,
+  Divider,
+  StackDivider,
+  Flex,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
+
+function Portfolio() {
+  return (
+    <Box
+      w="717px"
+      h="430px"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+    >
+      <Box
+        w="717px"
+        h="430px"
+        bg="white"
+        rounded="14px"
+        shadow="md"
+        position="relative"
+      >
+        <Text
+          position="absolute"
+          left="16px"
+          top="16px"
+          color="slate.700"
+          fontSize="xl"
+          fontWeight="bold"
+          fontFamily="Manrope"
+        >
+          Overview
+        </Text>
+      </Box>
+      <Box w="685px" h="362px" borderRadius="14px" textColor="black" border="1px solid black" bg="#FFF">
+hello
+      </Box>
+    </Box>
+  );
+}
+
+export default Portfolio;
+
+ 
+rgba(222, 222, 222, 0.70);
+ 
+
+      <VStack
+  divider={<StackDivider borderColor='gray' />}
+  spacing={4}
+  // align='stretch'
+>
+  <Box h='40px' bg='gray' te>
+    1
+  </Box>
+  <Box h='40px' bg='tomato'>
+    2
+  </Box>
+  <Box h='40px' bg='pink.100'>
+    3
+  </Box>
+</VStack>
+ 
+200
+ 
+
+      <Box>
+      </Box>
+ 
+
+        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+          <GridItem colSpan={2} h="10" bg="tomato" />
+          <GridItem colStart={4} colEnd={6} h="10" bg="papayawhip" />
+        </Grid>
+ 
+ bg="blue" 
+ 
+
+      <Flex position="absolute" left="7px" top="43px" w="685px" flexDirection="row" gap="5" pl="9px" pt="8.92px" pb="2.5">
+        <Box w="685px" h="362px" bg="white" rounded="14px" border="1px" borderColor="neutral.200" opacity="70%" flexDirection="column">
+          <HStack spacing="9px">
+            <Box p="2" rounded="full" border="1px" borderColor="zinc.100" justifyContent="center" alignItems="center">
+              <Box w="6" h="6" pl="0.5" pr="1px" py="3px" justifyContent="center" alignItems="center" />
+            </Box>
+            <VStack align="start" spacing="1px">
+              <Text color="slate.700" fontSize="lg" fontWeight="semibold" fontFamily="Manrope">
+                Net Daily P&L
+              </Text>
+              <HStack spacing="1">
+                <Box w="3.5" h="3.5" justifyContent="center" alignItems="center" />
+                <Text color="slate.700" fontSize="xs" opacity="60%" fontFamily="Manrope">
+                  15 % compared with last day
+                </Text>
+              </HStack>
+            </VStack>
+          </HStack>
+          
+          <HStack spacing="0">
+            <Box h="41px" px="4" pt="2.5" pb="3" bg="whiteAlpha.60" borderRight="1px" borderColor="neutral.200" justifyContent="center" alignItems="center">
+              <Text color="slate.700" fontSize="sm" fontWeight="semibold" fontFamily="Manrope">
+                Daily
+              </Text>
+            </Box>
+            <Box h="41px" px="4" pt="2.5" pb="3" bg="neutral.200" opacity="60%" borderRight="1px" borderColor="neutral.200" justifyContent="center" alignItems="center">
+              <Text color="slate.400" fontSize="sm" fontWeight="semibold" fontFamily="Manrope">
+                Weekly
+              </Text>
+            </Box>
+            <Box h="41px" px="4" pt="2.5" pb="3" bg="neutral.200" opacity="60%" borderRight="1px" borderColor="neutral.200" justifyContent="center" alignItems="center">
+              <Text color="slate.400" fontSize="sm" fontWeight="semibold" fontFamily="Manrope">
+                Monthly
+              </Text>
+            </Box>
+          </HStack>
+          
+          <Divider borderColor="slate.700" opacity="20%" />
+          
+          <HStack justifyContent="space-between">
+            <VStack align="start" spacing="0">
+              <Text color="slate.700" fontSize="28px" fontWeight="semibold" fontFamily="Manrope">
+                ₹ 28,891.138
+              </Text>
+              <Text color="slate.700" fontSize="xs" opacity="60%" fontFamily="Manrope">
+                Profit/ Loss
+              </Text>
+            </VStack>
+            <VStack align="end" spacing="0">
+              <Text color="slate.700" fontSize="2xl" fontFamily="Manrope">
+                01-12-2023
+              </Text>
+              <Text color="slate.700" fontSize="xs" opacity="60%" fontFamily="Manrope">
+                Today
+              </Text>
+            </VStack>
+          </HStack>
+          
+          <Box w="645px" h="198px" bg="white" rounded="10px" border="1px" borderColor="neutral.200" opacity="70%">
+            <Box w="596px" h="31px" position="absolute" left="49px" top="15px" bg="white" borderBottom="1px" borderColor="neutral.200" />
+            {/* Chart bars and other elements go here */}
+            <Box w="1.5" h="50px" position="absolute" left="53px" top="57px" bg="emerald.400" />
+            <Box w="1.5" h="33px" position="absolute" left="88.15px" top="106.50px" bg="rose.400" />
+            {/* Add other bars here */}
+            <Text position="absolute" left="9.72px" top="38.50px" textAlign="right" color="slate.400" fontSize="10px" fontWeight="semibold" fontFamily="Manrope">
+              ₹ 10k
+            </Text>
+            {/* Add other text elements here */}
+          </Box>
+        </Box>
+        
+        {/* Repeat similar structure for Weekly and Monthly sections */}
+      </Flex>
+ 
+
+  const property = {
+    imageUrl: 'https://bit.ly/2Z4KKcF',
+    imageAlt: 'Rear view of modern home with pool',
+    beds: 3,
+    baths: 2,
+    title: 'Modern home in city center in the heart of historic Los Angeles',
+    formattedPrice: '$1,900.00',
+    reviewCount: 34,
+    rating: 4,
+  };
+ 
+Image, Badge 
+ 
+
+import { StarIcon } from '@chakra-ui/icons';
+ 
+
+      {/* <Image src={property.imageUrl} alt={property.imageAlt} /> */}
+ 
+
+      bg="gray"
+ 
+<Box p='6'>
+        <Box display='flex' alignItems='baseline'>
+          <Badge borderRadius='full' px='2' colorScheme='teal'>
+            New
+          </Badge>
+          <Box
+            color='gray.500'
+            fontWeight='semibold'
+            letterSpacing='wide'
+            fontSize='xs'
+            textTransform='uppercase'
+            ml='2'
+          >
+            {property.beds} beds &bull; {property.baths} baths
+          </Box>
+        </Box>
+
+        <Box
+          mt='1'
+          fontWeight='semibold'
+          as='h4'
+          lineHeight='tight'
+          noOfLines={1}
+        >
+          {property.title}
+        </Box>
+
+        <Box>
+          {property.formattedPrice}
+          <Box as='span' color='gray.600' fontSize='sm'>
+            / wk
+          </Box>
+        </Box>
+
+        <Box display='flex' mt='2' alignItems='center'>
+          {Array(5)
+            .fill('')
+            .map((_, i) => (
+              <StarIcon
+                key={i}
+                color={i < property.rating ? 'teal.500' : 'gray.300'}
+              />
+            ))}
+          <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+            {property.reviewCount} reviews
+          </Box>
+        </Box>
+      </Box>
+ 
+import React from 'react';
+import { Box, Image, Badge, } from '@chakra-ui/react';
+
+function Portfolio() {
+  const property = {
+    imageUrl: 'https://bit.ly/2Z4KKcF',
+    imageAlt: 'Rear view of modern home with pool',
+    beds: 3,
+    baths: 2,
+    title: 'Modern home in city center in the heart of historic Los Angeles',
+    formattedPrice: '$1,900.00',
+    reviewCount: 34,
+    rating: 4,
+  };
+
+  return (
+    <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Image src={property.imageUrl} alt={property.imageAlt} />
+
+      <Box p='6'>
+        <Box display='flex' alignItems='baseline'>
+          <Badge borderRadius='full' px='2' colorScheme='teal'>
+            New
+          </Badge>
+          <Box
+            color='gray.500'
+            fontWeight='semibold'
+            letterSpacing='wide'
+            fontSize='xs'
+            textTransform='uppercase'
+            ml='2'
+          >
+            {property.beds} beds &bull; {property.baths} baths
+          </Box>
+        </Box>
+
+        <Box
+          mt='1'
+          fontWeight='semibold'
+          as='h4'
+          lineHeight='tight'
+          noOfLines={1}
+        >
+          {property.title}
+        </Box>
+
+        <Box>
+          {property.formattedPrice}
+          <Box as='span' color='gray.600' fontSize='sm'>
+            / wk
+          </Box>
+        </Box>
+
+        <Box display='flex' mt='2' alignItems='center'>
+          {Array(5)
+            .fill('')
+            .map((_, i) => (
+              <StarIcon
+                key={i}
+                color={i < property.rating ? 'teal.500' : 'gray.300'}
+              />
+            ))}
+          <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+            {property.reviewCount} reviews
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+export default Portfolio;
+
+ 
+import React from 'react';
+import { Box, Image, Badge, } from '@chakra-ui/react';
+
+function Portfolio() {
+  const property = {
+    imageUrl: 'https://bit.ly/2Z4KKcF',
+    imageAlt: 'Rear view of modern home with pool',
+    beds: 3,
+    baths: 2,
+    title: 'Modern home in city center in the heart of historic Los Angeles',
+    formattedPrice: '$1,900.00',
+    reviewCount: 34,
+    rating: 4,
+  };
+
+  return (
+    <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Image src={property.imageUrl} alt={property.imageAlt} />
+
+      <Box p='6'>
+        <Box display='flex' alignItems='baseline'>
+          <Badge borderRadius='full' px='2' colorScheme='teal'>
+            New
+          </Badge>
+          <Box
+            color='gray.500'
+            fontWeight='semibold'
+            letterSpacing='wide'
+            fontSize='xs'
+            textTransform='uppercase'
+            ml='2'
+          >
+            {property.beds} beds &bull; {property.baths} baths
+          </Box>
+        </Box>
+
+        <Box
+          mt='1'
+          fontWeight='semibold'
+          as='h4'
+          lineHeight='tight'
+          noOfLines={1}
+        >
+          {property.title}
+        </Box>
+
+        <Box>
+          {property.formattedPrice}
+          <Box as='span' color='gray.600' fontSize='sm'>
+            / wk
+          </Box>
+        </Box>
+
+        <Box display='flex' mt='2' alignItems='center'>
+          {Array(5)
+            {/* .fill('')
+            .map((_, i) => (
+             
+            ))} */}
+          <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+            {property.reviewCount} reviews
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+export default Portfolio;
+
+ 
+StarIcon 
+ 
+
+import DashboardLayout from "./components/Dashboardlayout";
+ 
+<DashboardLayout }/>
+ 
+<DashboardLayout />
+ 
+
+import DashboardLayout from "./components/Dashboardlayout";
+ 
+
+import Dashboardlayout from "./components/Dashboardlayout";
+ 
+Dashboardlayout
+ 
+
+import SideNav from "./SideNav";
+ 
+
+import SideNav from "./SideNav";
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" height="1080px">
+      <Flex >
+        <SideNav />
+        <TopNav />
+        <Portfolio />
+      </Flex>
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+ 
+
+import Portfolio from "../pages/Dashboard/Portfolio";
+ 
+
+    </div>
+ 
+
+import Portfolio from "../pages/Dashboard/Portfolio";
+ 
+AirbnbCard
+ 
+
+      mr
+ 
+import { Box,Badge,Icon,Image } from "@chakra-ui/react"
+
+function Portfolio() {
+    const property = {
+      imageUrl: 'https://bit.ly/2Z4KKcF',
+      imageAlt: 'Rear view of modern home with pool',
+      beds: 3,
+      baths: 2,
+      title: 'Modern home in city center in the heart of historic Los Angeles',
+      formattedPrice: '$1,900.00',
+      reviewCount: 34,
+      rating: 4,
+    }
+  
+    return (
+      <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+        <Image src={property.imageUrl} alt={property.imageAlt} />
+  
+        <Box p='6'>
+          <Box display='flex' alignItems='baseline'>
+            <Badge borderRadius='full' px='2' colorScheme='teal'>
+              New
+            </Badge>
+            <Box
+              color='gray.500'
+              fontWeight='semibold'
+              letterSpacing='wide'
+              fontSize='xs'
+              textTransform='uppercase'
+              ml='2'
+            >
+              {property.beds} beds &bull; {property.baths} baths
+            </Box>
+          </Box>
+  
+          <Box
+            mt='1'
+            fontWeight='semibold'
+            as='h4'
+            lineHeight='tight'
+            noOfLines={1}
+          >
+            {property.title}
+          </Box>
+  
+          <Box>
+            {property.formattedPrice}
+            <Box as='span' color='gray.600' fontSize='sm'>
+              / wk
+            </Box>
+          </Box>
+  
+          <Box display='flex' mt='2' alignItems='center'>
+            {Array(5)
+              .fill('')
+              .map((_, i) => (
+                {/* <StarIcon
+                  key={i}
+                  color={i < property.rating ? 'teal.500' : 'gray.300'}
+                /> */}
+              ))}
+            <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+              {property.reviewCount} reviews
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    )
+  }
+  export default Portfolio
+ 
+StarIcon
+ 
+import { Card } from '@chakra-ui/react'
+import React from 'react'
+
+function Portfolio() {
+  return (
+    <Card width="717px" h="430px" bg="gray">
+        
+    </Card>
+  )
+}
+
+export default Portfolio
+
+ 
+
+import SideNav from "./SideNav";
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" height="1080px">
+      <Flex >
+        <SideNav />
+        <TopNav />
+      </Flex>
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+
+ 
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Text,
+  Img,
+} from "@chakra-ui/react";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+function TopNav({ onOpen }) {
+  const buttons = [
+    { text: "Symbol" },
+    { text: "Setup" },
+    { text: "Side" },
+    { text: "Add" },
+  ];
+
+  return (
+    <Box
+      width="100%"
+      height="90px"
+      padding="16px"
+      bg="gray"
+      alignItems="center"
+      gap="16px"
+      display="flex"
+      justifyContent="right"
+      px="4"
+    >
+      <HStack
+        width={{ base: "auto", lg: "403px" }}
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+        bg="#FFF"
+        alignItems="center"
+        fontSize="16px"
+        padding="10px"
+
+        justifyContent={{ base: "space-between", lg: "space-around" }}
+      >
+        {/* <Icon as={FaBars} onClick={onOpen} display={{ base: "block", lg: "none" }} /> */}
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD"
+            height="40px"
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+            flexGrow={1}
+            _hover={{ bg: "#F3F3F7" }}
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Button
+          color="#8798AD"
+          height="40px"
+          display="flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          fontSize="16px"
+          bg="#fff"
+          justifyContent="center"
+          flexGrow={1}
+          _hover={{ bg: "#F3F3F7" }}
+        >
+          <Text fontSize="16px" fontWeight="normal">
+            {buttons[3].text}
+          </Text>
+        </Button>
+      </HStack>
+      <HStack spacing={4}>
+        <Button
+          color="#FFF"
+          width="150px"
+          height="41px"
+          display="flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          padding="0px 30px"
+          borderRadius="6px"
+          fontSize="16px"
+          bg="#4159B1"
+          justifyContent="center"
+          _hover={{
+            color: "#000",
+            bg: "#FFF",
+          }}
+        >
+          Add Traders
+        </Button>
+        <Button
+          color="#FFF"
+          width="244px"
+          height="52px"
+          display="inline-flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          padding="0px 30px"
+          borderRadius="14px"
+          fontSize="16px"
+          gap="5px"
+          bg="#FFF"
+          justifyContent="center"
+        >
+          <Img
+            src="/images/02.svg"
+            borderRadius="full"
+            border="1px solid #DEDEDE"
+            width="44px"
+            height="44px"
+            boxSize="42px"
+            mr="2px"
+          />
+          <Text
+            color="black"
+            display="flex"
+            alignItems="center"
+            padding="10px 28px"
+            borderRadius="14px"
+            border="1px solid #DEDEDE"
+            gap="10px"
+          >
+            My Portfolio
+            <Icon as={MdKeyboardArrowDown} color="black" />
+          </Text>
+        </Button>
+      </HStack>
+    </Box>
+  );
+}
+
+export default TopNav;
+ 
+
+      <Flex>
+        <SideNav />
+        <Box>
+          <Portfolio />
+        </Box>
+      </Flex>
+ 
+justifyContent="space-between"
+ 
+ flex="1" ml="10px"
+ 
+mt="10px"
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" height="1080px">
+      <Flex height="100%">
+        <SideNav />
+        <Flex direction="column" flex="1">
+          <TopNav />
+          <Box flex="1">
+            <Portfolio />
+          </Box>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+
+ 
+mr="120px"
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" height="1080px">
+      <Flex height="100%">
+        <SideNav />
+        <Flex direction="column" flex="1">
+          <TopNav />
+          <Box flex="1" mr="120px">
+            <Portfolio />
+          </Box>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" height="1080px">
+      <Flex height="100%">
+        <SideNav />
+        <Flex direction="column" flex="1">
+          <TopNav />
+          <Box width={}>
+            <Portfolio />
+          </Box>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+
+ 
+import { Box, Flex } from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+import TopNav from "./TopNav";
+import React from "react";
+import Portfolio from "../pages/Dashboard/Portfolio";
+// import { useDisclosure } from "@chakra-ui/react";
+
+function Dashboardlayout() {
+  return (
+    <Box width="1920px" h="1080px">
+    <Flex>
+      <SideNav />
+      <TopNav />
+    </Flex>
+    <Portfolio />
+    </Box>
+  );
+}
+
+export default Dashboardlayout;
+
+ 
+
+      <Portfolio />
+ 
+
+      <Box flex="column"></Box>
+ 
+
+      <></>
+ 
+
+      <Box>
+        
+      </Box>
+ 
+
+    <div>
+      
+    </div>
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
+
+function SideNav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <>
+      <Box display={{ base: "block", lg: "none" }} p="4">
+        <Icon as={FaBars} w={6} h={6} onClick={onOpen} cursor="pointer" />
+      </Box>
+
+      <Box
+        width={{ base: "0", lg: "258px" }}
+        h="1080px"
+        bg="#fff"
+        boxShadow="2xl"
+        display={{ base: "none", lg: "block" }}
+      >
+        <Stack justify="space-between" h="1080px">
+          <Box>
+            <Center>
+              <HStack spacing={1} mt="48px">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Your Image"
+                  boxSize="50px"
+                />
+                <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                  TradeRyt
+                </Text>
+              </HStack>
+            </Center>
+            <Box mt="35px">
+              {navLinks.slice(0, 4).map((nav) => (
+                <HStack
+                  mx="12px"
+                  key={nav.text}
+                  cursor="pointer"
+                  py="15px"
+                  px="40px"
+                  width="90%"
+                  borderRadius="10px"
+                  display="flex"
+                  alignItems="center"
+                  gap="18px"
+                  _hover={{
+                    bg: "#F3F3F7",
+                    color: "#171717",
+                  }}
+                  color="#0a2351"
+                >
+                  {nav.icon && (
+                    <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                  )}
+                  <Text fontWeight="400" fontSize="19px">
+                    {nav.text}
+                  </Text>
+                </HStack>
+              ))}
+            </Box>
+          </Box>
+          <Box mb="5px">
+            {navLinks.slice(4, 7).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Stack>
+      </Box>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerBody>
+            <Stack justify="space-between" h="100%">
+              <Box>
+                <Center>
+                  <HStack spacing={1} mt="48px">
+                    <Image
+                      src="/images/logo.svg"
+                      alt="Your Image"
+                      boxSize="50px"
+                    />
+                    <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                      TradeRyt
+                    </Text>
+                  </HStack>
+                </Center>
+                <Box mt="35px">
+                  {navLinks.slice(0, 4).map((nav) => (
+                    <HStack
+                      mx="12px"
+                      key={nav.text}
+                      py="15px"
+                      px="40px"
+                      width="100%"
+                      borderRadius="10px"
+                      display="flex"
+                      alignItems="center"
+                      gap="18px"
+                      _hover={{
+                        bg: "#F3F3F7",
+                        color: "#171717",
+                      }}
+                      color="#0a2351"
+                    >
+                      {nav.icon && (
+                        <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                      )}
+                      <Text fontWeight="400" fontSize="19px">
+                        {nav.text}
+                      </Text>
+                    </HStack>
+                  ))}
+                </Box>
+              </Box>
+              <Box mb="5px">
+                {navLinks.slice(4, 7).map((nav) => (
+                  <HStack
+                    mx="12px"
+                    key={nav.text}
+                    py="15px"
+                    px="40px"
+                    width="100%"
+                    borderRadius="10px"
+                    display="flex"
+                    alignItems="center"
+                    gap="18px"
+                    _hover={{
+                      bg: "#F3F3F7",
+                      color: "#171717",
+                    }}
+                    color="#0a2351"
+                  >
+                    {nav.icon && (
+                      <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                    )}
+                    <Text fontWeight="400" fontSize="19px">
+                      {nav.text}
+                    </Text>
+                  </HStack>
+                ))}
+              </Box>
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
+export default SideNav;
+
+ 
+
+        <Sidedrawer />
+ 
+onOpen={onOpen}
+ 
+isOpen={isOpen} onClose={onClose} 
+ 
+
+    </Box>
+ 
+
+    <Box width= >
+ 
+
+  const { isOpen, onClose, onOpen } = useDisclosure();
+ 
+
+import Sidedrawer from "./Sidedrawer";
+ 
+
+import Sidedrawer from "./Sidedrawer";
+ 
+
+import Sidedrawer from "./Sidedrawer";
+ 
+import {
+  Flex,
+  Box,
+  Button,
+  HStack,
+  Img,
+  Icon,
+  Text,
+  Container,
+} from "@chakra-ui/react";
+import React from "react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+function TopNav({onOpen}) {
+  const buttons = [
+    {
+      text: "Symbol",
+    },
+    {
+      text: "Setup",
+    },
+    {
+      text: "Side",
+    },
+    {
+      icon: HiPlusCircle,
+      text: "Add",
+    },
+  ];
+  return (
+    <Box
+      width="100%"
+      height="90px"
+    //   border="1px solid #DE
+      padding="52px"
+      bg="#FFF;"
+      alignItems="center"
+      gap="16.42"
+      display="flex"
+      px="4"
+    >
+      <Box
+        width="403px"
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF;"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+      <Icon as={<FaBars />} onClick={onOpen} display={{
+        base:"block",
+        lg:"none"
+      }}/>
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD;"
+            width="100px" // Adjust width as needed
+            height="40px" // Adjust height as needed
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20.555px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons.icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px 0px 35px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000", // Black text color on hover
+          bg: "#FFF", // White background color on hover
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+      color="#FFF"
+      width="244px"
+      height="52px"
+      display="inline-flex"
+      border="1px solid #DEDEDE"
+      alignItems="center"
+      padding="0px 30px 0px 35px"
+      borderRadius="14px"
+      fontSize="16px"
+      gap="5px"
+      mt="38px"
+      bg="#FFF"
+      justifyContent="center"
+    >
+      <Img
+        src="images/02.svg"
+        borderRadius="full"
+        border="1px solid #DEDEDE"
+        width='44px'
+        height='44px'
+        boxSize="42px"
+        mr="2px"
+      />{" "}
+      {/* Assuming 02.svg is the image */}
+      <Text
+        color="black"
+        display="flex"
+        alignItems="center"
+        padding="10px 28px"
+        borderRadius="14px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+      >
+        My Portfolio
+        <Icon as={MdKeyboardArrowDown} color="black" />
+      </Text>
+    </Button>
+    </Box>
+  );
+}
+export default TopNav
+ 
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Text,
+  Img,
+} from "@chakra-ui/react";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+function TopNav({ onOpen }) {
+  const buttons = [
+    { text: "Symbol" },
+    { text: "Setup" },
+    { text: "Side" },
+    { text: "Add" },
+  ];
+
+  return (
+    <Box
+      width="100%"
+      height="90px"
+      padding="16px"
+      bg="#FFF"
+      alignItems="center"
+      gap="16px"
+      display="flex"
+      justifyContent="right"
+      px="4"
+    >
+      <HStack
+        width={{ base: "auto", lg: "403px" }}
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        gap="10px"
+        bg="#FFF"
+        alignItems="center"
+        fontSize="16px"
+        padding="10px"
+
+        justifyContent={{ base: "space-between", lg: "space-around" }}
+      >
+        {/* <Icon as={FaBars} onClick={onOpen} display={{ base: "block", lg: "none" }} /> */}
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD"
+            height="40px"
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+            flexGrow={1}
+            _hover={{ bg: "#F3F3F7" }}
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Button
+          color="#8798AD"
+          height="40px"
+          display="flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          fontSize="16px"
+          bg="#fff"
+          justifyContent="center"
+          flexGrow={1}
+          _hover={{ bg: "#F3F3F7" }}
+        >
+          <Text fontSize="16px" fontWeight="normal">
+            {buttons[3].text}
+          </Text>
+        </Button>
+      </HStack>
+      <HStack spacing={4}>
+        <Button
+          color="#FFF"
+          width="150px"
+          height="41px"
+          display="flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          padding="0px 30px"
+          borderRadius="6px"
+          fontSize="16px"
+          bg="#4159B1"
+          justifyContent="center"
+          _hover={{
+            color: "#000",
+            bg: "#FFF",
+          }}
+        >
+          Add Traders
+        </Button>
+        <Button
+          color="#FFF"
+          width="244px"
+          height="52px"
+          display="inline-flex"
+          border="1px solid #DEDEDE"
+          alignItems="center"
+          padding="0px 30px"
+          borderRadius="14px"
+          fontSize="16px"
+          gap="5px"
+          bg="#FFF"
+          justifyContent="center"
+        >
+          <Img
+            src="/images/02.svg"
+            borderRadius="full"
+            border="1px solid #DEDEDE"
+            width="44px"
+            height="44px"
+            boxSize="42px"
+            mr="2px"
+          />
+          <Text
+            color="black"
+            display="flex"
+            alignItems="center"
+            padding="10px 28px"
+            borderRadius="14px"
+            border="1px solid #DEDEDE"
+            gap="10px"
+          >
+            My Portfolio
+            <Icon as={MdKeyboardArrowDown} color="black" />
+          </Text>
+        </Button>
+      </HStack>
+    </Box>
+  );
+}
+
+export default TopNav;
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
+
+function SideNav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <>
+      <Box display={{ base: "block", lg: "none" }} p="4">
+        <Icon as={FaBars} w={6} h={6} onClick={onOpen} cursor="pointer" />
+      </Box>
+
+      <Box
+        width={{ base: "0", lg: "258px" }}
+        h="1080px"
+        bg="#fff"
+        boxShadow="2xl"
+        display={{ base: "none", lg: "block" }}
+      >
+        <Stack justify="space-between" h="1080px">
+          <Box>
+            <Center>
+              <HStack spacing={1} mt="48px">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Your Image"
+                  boxSize="50px"
+                />
+                <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                  TradeRyt
+                </Text>
+              </HStack>
+            </Center>
+            <Box mt="35px">
+              {navLinks.slice(0, 4).map((nav) => (
+                <HStack
+                  mx="12px"
+                  key={nav.text}
+                  cursor="pointer"
+                  py="15px"
+                  px="40px"
+                  width="90%"
+                  borderRadius="10px"
+                  display="flex"
+                  alignItems="center"
+                  gap="18px"
+                  _hover={{
+                    bg: "#F3F3F7",
+                    color: "#171717",
+                  }}
+                  color="#0a2351"
+                >
+                  {nav.icon && (
+                    <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                  )}
+                  <Text fontWeight="400" fontSize="19px">
+                    {nav.text}
+                  </Text>
+                </HStack>
+              ))}
+            </Box>
+          </Box>
+          <Box mb="5px">
+            {navLinks.slice(4, 7).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Stack>
+      </Box>
+    </>
+  );
+}
+
+export default SideNav;
+
+ 
+
+                    width:"20px"
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
+
+function SideNav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <>
+      <Box display={{ base: "block", lg: "none" }} p="4">
+        <Icon as={FaBars} w={6} h={6} onClick={onOpen} cursor="pointer" />
+      </Box>
+
+      <Box
+        width={{ base: "0", lg: "258px" }}
+        h="100vh"
+        bg="#fff"
+        boxShadow="2xl"
+        display={{ base: "none", lg: "block" }}
+      >
+        <Stack justify="space-between" h="100%">
+          <Box>
+            <Center>
+              <HStack spacing={1} mt="48px">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Your Image"
+                  boxSize="50px"
+                />
+                <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                  TradeRyt
+                </Text>
+              </HStack>
+            </Center>
+            <Box mt="35px">
+              {navLinks.slice(0, 4).map((nav) => (
+                <HStack
+                  mx="12px"
+                  key={nav.text}
+                  py="15px"
+                  px="40px"
+                  width="100%"
+                  borderRadius="10px"
+                  display="flex"
+                  alignItems="center"
+                  gap="18px"
+                  _hover={{
+                    bg: "#F3F3F7",
+                    color: "#171717",
+                  }}
+                  color="#0a2351"
+                >
+                  {nav.icon && (
+                    <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                  )}
+                  <Text fontWeight="400" fontSize="19px">
+                    {nav.text}
+                  </Text>
+                </HStack>
+              ))}
+            </Box>
+          </Box>
+          <Box mb="5px">
+            {navLinks.slice(4, 7).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Stack>
+      </Box>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerBody>
+            <Stack justify="space-between" h="100%">
+              <Box>
+                <Center>
+                  <HStack spacing={1} mt="48px">
+                    <Image
+                      src="/images/logo.svg"
+                      alt="Your Image"
+                      boxSize="50px"
+                    />
+                    <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                      TradeRyt
+                    </Text>
+                  </HStack>
+                </Center>
+                <Box mt="35px">
+                  {navLinks.slice(0, 4).map((nav) => (
+                    <HStack
+                      mx="12px"
+                      key={nav.text}
+                      py="15px"
+                      px="40px"
+                      width="100%"
+                      borderRadius="10px"
+                      display="flex"
+                      alignItems="center"
+                      gap="18px"
+                      _hover={{
+                        bg: "#F3F3F7",
+                        color: "#171717",
+                      }}
+                      color="#0a2351"
+                    >
+                      {nav.icon && (
+                        <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                      )}
+                      <Text fontWeight="400" fontSize="19px">
+                        {nav.text}
+                      </Text>
+                    </HStack>
+                  ))}
+                </Box>
+              </Box>
+              <Box mb="5px">
+                {navLinks.slice(4, 7).map((nav) => (
+                  <HStack
+                    mx="12px"
+                    key={nav.text}
+                    py="15px"
+                    px="40px"
+                    width="100%"
+                    borderRadius="10px"
+                    display="flex"
+                    alignItems="center"
+                    gap="18px"
+                    _hover={{
+                      bg: "#F3F3F7",
+                      color: "#171717",
+                    }}
+                    color="#0a2351"
+                  >
+                    {nav.icon && (
+                      <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                    )}
+                    <Text fontWeight="400" fontSize="19px">
+                      {nav.text}
+                    </Text>
+                  </HStack>
+                ))}
+              </Box>
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
+export default SideNav;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
+
+function SideNav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <>
+      <Box display={{ base: "block", lg: "none" }} p="4">
+        <Icon as={FaBars} w={6} h={6} onClick={onOpen} cursor="pointer" />
+      </Box>
+
+      <Box
+        width={{ base: "0", lg: "258px" }}
+        h="100vh"
+        bg="#fff"
+        boxShadow="2xl"
+        display={{ base: "none", lg: "block" }}
+      >
+        <Stack justify="space-between" h="100%">
+          <Box>
+            <Center>
+              <HStack spacing={1} mt="48px">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Your Image"
+                  boxSize="50px"
+                />
+                <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                  TradeRyt
+                </Text>
+              </HStack>
+            </Center>
+            <Box mt="35px">
+              {navLinks.slice(0, 4).map((nav) => (
+                <HStack
+                  mx="12px"
+                  key={nav.text}
+                  py="15px"
+                  px="40px"
+                  width="100%"
+                  borderRadius="10px"
+                  display="flex"
+                  alignItems="center"
+                  gap="18px"
+                  _hover={{
+                    bg: "#F3F3F7",
+                    color: "#171717",
+                  }}
+                  color="#0a2351"
+                >
+                  {nav.icon && (
+                    <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                  )}
+                  <Text fontWeight="400" fontSize="19px">
+                    {nav.text}
+                  </Text>
+                </HStack>
+              ))}
+            </Box>
+          </Box>
+          <Box mb="5px">
+            {navLinks.slice(4, 7).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Stack>
+      </Box>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerBody>
+            <Stack justify="space-between" h="100%">
+              <Box>
+                <Center>
+                  <HStack spacing={1} mt="48px">
+                    <Image
+                      src="/images/logo.svg"
+                      alt="Your Image"
+                      boxSize="50px"
+                    />
+                    <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                      TradeRyt
+                    </Text>
+                  </HStack>
+                </Center>
+                <Box mt="35px">
+                  {navLinks.slice(0, 4).map((nav) => (
+                    <HStack
+                      mx="12px"
+                      key={nav.text}
+                      py="15px"
+                      px="40px"
+                      width="100%"
+                      borderRadius="10px"
+                      display="flex"
+                      alignItems="center"
+                      gap="18px"
+                      _hover={{
+                        bg: "#F3F3F7",
+                        color: "#171717",
+                      }}
+                      color="#0a2351"
+                    >
+                      {nav.icon && (
+                        <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                      )}
+                      <Text fontWeight="400" fontSize="19px">
+                        {nav.text}
+                      </Text>
+                    </HStack>
+                  ))}
+                </Box>
+              </Box>
+              <Box mb="5px">
+                {navLinks.slice(4, 7).map((nav) => (
+                  <HStack
+                    mx="12px"
+                    key={nav.text}
+                    py="15px"
+                    px="40px"
+                    width="100%"
+                    borderRadius="10px"
+                    display="flex"
+                    alignItems="center"
+                    gap="18px"
+                    _hover={{
+                      bg: "#F3F3F7",
+                      color: "#171717",
+                    }}
+                    color="#0a2351"
+                  >
+                    {nav.icon && (
+                      <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+                    )}
+                    <Text fontWeight="400" fontSize="19px">
+                      {nav.text}
+                    </Text>
+                  </HStack>
+                ))}
+              </Box>
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
+export default SideNav;
+
+ 
+
+      justifyContent="space-between
+ 
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Text,
+  Img,
+} from "@chakra-ui/react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+function TopNav({ onOpen }) {
+  const buttons = [
+    { text: "Symbol" },
+    { text: "Setup" },
+    { text: "Side" },
+    { icon: HiPlusCircle, text: "Add" },
+  ];
+
+  return (
+    <Box
+      width="100%"
+      height="90px"
+      padding="52.6px"
+      bg="#FFF"
+      alignItems="center"
+      gap="16px"
+      display="flex"
+      justifyContent="flex-end"
+      px="4"
+    >
+      <Box
+        width={{ base: "100%", lg: "403px" }}
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+        <Icon as={FaBars} onClick={onOpen} display={{ base: "block", lg: "none" }} />
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD"
+            width="100px"
+            height="40px"
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons[3].icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000",
+          bg: "#FFF",
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+        color="#FFF"
+        width="244px"
+        height="52px"
+        display="inline-flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="14px"
+        fontSize="16px"
+        gap="5px"
+        mt="38px"
+        bg="#FFF"
+        justifyContent="center"
+      >
+        <Img
+          src="/images/02.svg"
+          borderRadius="full"
+          border="1px solid #DEDEDE"
+          width="44px"
+          height="44px"
+          boxSize="42px"
+          mr="2px"
+        />
+        <Text
+          color="black"
+          display="flex"
+          alignItems="center"
+          padding="10px 28px"
+          borderRadius="14px"
+          border="1px solid #DEDEDE"
+          gap="10px"
+        >
+          My Portfolio
+          <Icon as={MdKeyboardArrowDown} color="black" />
+        </Text>
+      </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Text,
+  Img,
+} from "@chakra-ui/react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+function TopNav({ onOpen }) {
+  const buttons = [
+    { text: "Symbol" },
+    { text: "Setup" },
+    { text: "Side" },
+    { icon: HiPlusCircle, text: "Add" },
+  ];
+
+  return (
+    <Box
+      width="100%"
+      height="90px"
+      padding="52.6px"
+      bg="#FFF"
+      alignItems="center"
+      gap="16px"
+      display="flex"
+      justifyContent="flex-end"
+      px="4"
+    >
+      <Box
+        width={{ base: "100%", lg: "403px" }}
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+        <Icon as={FaBars} onClick={onOpen} display={{ base: "block", lg: "none" }} />
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD"
+            width="100px"
+            height="40px"
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons[3].icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000",
+          bg: "#FFF",
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+        color="#FFF"
+        width="244px"
+        height="52px"
+        display="inline-flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="14px"
+        fontSize="16px"
+        gap="5px"
+        mt="38px"
+        bg="#FFF"
+        justifyContent="center"
+      >
+        <Img
+          src="/images/02.svg"
+          borderRadius="full"
+          border="1px solid #DEDEDE"
+          width="44px"
+          height="44px"
+          boxSize="42px"
+          mr="2px"
+        />
+        <Text
+          color="black"
+          display="flex"
+          alignItems="center"
+          padding="10px 28px"
+          borderRadius="14px"
+          border="1px solid #DEDEDE"
+          gap="10px"
+        >
+          My Portfolio
+          <Icon as={MdKeyboardArrowDown} color="black" />
+        </Text>
+      </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <Box width={{ base: "100%", lg: "258px" }} h="1080px" bg="#fff" boxShadow="2xl">
+      <Stack justify="space-between" h="100%">
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48px">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+              />
+              <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35px">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              _hover={{
+                bg: "#F3F3F7",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+    </Box>
+  );
+}
+
+export default SideNav;
+
+ 
+import React from "react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import SideNav from "./Sidenav";
+
+function Sidedrawer({ isOpen, onClose }) {
+  return (
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerBody>
+          <SideNav />
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
+export default Sidedrawer;
+
+ 
+import React from "react";
+import Signup from './auth/Signup/Signup';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import Signin from './auth/Signin/Signin'
+import ForgetPassword from "./auth/ForgetPassword/ForgetPassword";
+import Dashboardlayout from "./components/Dashboardlayout";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboardlayout />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/forget-password" element={<ForgetPassword />}/>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+ 
+import React from "react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  Image,
+  Center,
+} from "@chakra-ui/react";
+import { MdDashboard } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdOutlineHelpCenter } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiLivejournal } from "react-icons/si";
+
+function SideNav() {
+  const navLinks = [
+    {
+      icon: MdDashboard,
+      text: "Dashboard",
+      link: "/",
+    },
+    {
+      icon: SiLivejournal,
+      text: "Journal",
+      link: "/journal",
+    },
+    {
+      icon: TbReportAnalytics,
+      text: "Reports",
+      link: "/reports",
+    },
+    {
+      icon: SlCalender,
+      text: "Calendar",
+      link: "/calendar",
+    },
+    {
+      icon: MdOutlineSettings,
+      text: "Configuration",
+      link: "/configuration",
+    },
+    {
+      icon: RiAccountPinCircleFill,
+      text: "Account",
+      link: "/account",
+    },
+    {
+      icon: MdOutlineHelpCenter,
+      text: "Help",
+      link: "/help",
+    },
+    {
+      icon: RiLogoutBoxRLine,
+      text: "Log Out",
+      link: "/logout",
+    },
+  ];
+
+  return (
+    <Box width={{ base: "100%", lg: "258px" }} h="1080px" bg="#fff" boxShadow="2xl">
+      <Stack justify="space-between" h="100%">
+        <Box>
+          <Center>
+            <HStack spacing={1} mt="48px">
+              <Image
+                src="/images/logo.svg"
+                alt="Your Image"
+                boxSize="50px"
+              />
+              <Text fontSize="26.625px" fontWeight="600" textColor="rgba(0, 0, 0, 0.6)">
+                TradeRyt
+              </Text>
+            </HStack>
+          </Center>
+          <Box mt="35px">
+            {navLinks.slice(0, 4).map((nav) => (
+              <HStack
+                mx="12px"
+                key={nav.text}
+                py="15px"
+                px="40px"
+                width="100%"
+                borderRadius="10px"
+                display="flex"
+                alignItems="center"
+                gap="18px"
+                _hover={{
+                  bg: "#F3F3F7",
+                  color: "#171717",
+                }}
+                color="#0a2351"
+              >
+                {nav.icon && (
+                  <Icon color="rgba(249, 186, 51, 1)" width="20px" height="24px" as={nav.icon} />
+                )}
+                <Text fontWeight="400" fontSize="19px">
+                  {nav.text}
+                </Text>
+              </HStack>
+            ))}
+          </Box>
+        </Box>
+        <Box mb="5px">
+          {navLinks.slice(4, 7).map((nav) => (
+            <HStack
+              mx="12px"
+              key={nav.text}
+              py="15px"
+              px="40px"
+              width="100%"
+              borderRadius="10px"
+              display="flex"
+              alignItems="center"
+              gap="18px"
+              _hover={{
+                bg: "#F3F3F7",
+                color: "#171717",
+              }}
+              color="#0a2351"
+            >
+              {nav.icon && (
+                <Icon color="rgba(249, 186, 51, 1)" as={nav.icon} width="20px" height="24px" />
+              )}
+              <Text fontWeight="400" fontSize="19px">
+                {nav.text}
+              </Text>
+            </HStack>
+          ))}
+        </Box>
+      </Stack>
+    </Box>
+  );
+}
+
+export default SideNav;
+
+ 
+import React from "react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Text,
+  Img,
+} from "@chakra-ui/react";
+import { HiPlusCircle } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+function TopNav({ onOpen }) {
+  const buttons = [
+    { text: "Symbol" },
+    { text: "Setup" },
+    { text: "Side" },
+    { icon: HiPlusCircle, text: "Add" },
+  ];
+
+  return (
+    <Box
+      width="100%"
+      height="90px"
+      padding="52.6px"
+      bg="#FFF"
+      alignItems="center"
+      gap="16px"
+      display="flex"
+      justifyContent="flex-end"
+      px="4"
+    >
+      <Box
+        width={{ base: "100%", lg: "403px" }}
+        height="52px"
+        borderRadius="10px"
+        border="1px solid #DEDEDE"
+        mt="38px"
+        gap="10px"
+        bg="#FFF"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        fontSize="16px"
+        padding="10px 0px 10px 10px"
+      >
+        <Icon as={FaBars} onClick={onOpen} display={{ base: "block", lg: "none" }} />
+        {buttons.slice(0, 3).map((button, index) => (
+          <Button
+            key={index}
+            color="#8798AD"
+            width="100px"
+            height="40px"
+            display="flex"
+            border="1px solid #DEDEDE"
+            alignItems="center"
+            fontSize="16px"
+            bg="#fff"
+            justifyContent="center"
+          >
+            <Text fontSize="16px" fontWeight="normal">
+              {button.text}
+            </Text>
+          </Button>
+        ))}
+        <Text
+          display="flex"
+          width="100px"
+          height="50px"
+          padding="14px 20px"
+          justifyContent="center"
+          alignItems="center"
+          borderLeft="1px solid #DEDEDE"
+          background="#FFF"
+          gap="5px"
+          boxShadow="-1px 0px 10px 0px rgba(0, 0, 0, 0.10)"
+          borderRadius="0px 10px 10px 0px"
+          fontSize="16px"
+          cursor="pointer"
+          color="#8798AD"
+        >
+          <Icon as={buttons[3].icon} />
+          {buttons[3].text}
+        </Text>
+      </Box>
+      <Button
+        color="#FFF"
+        width="150px"
+        height="41px"
+        display="flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="6px"
+        fontSize="16px"
+        mt="38px"
+        bg="#4159B1"
+        justifyContent="center"
+        _hover={{
+          color: "#000",
+          bg: "#FFF",
+        }}
+      >
+        Add Traders
+      </Button>
+      <Button
+        color="#FFF"
+        width="244px"
+        height="52px"
+        display="inline-flex"
+        border="1px solid #DEDEDE"
+        alignItems="center"
+        padding="0px 30px"
+        borderRadius="14px"
+        fontSize="16px"
+        gap="5px"
+        mt="38px"
+        bg="#FFF"
+        justifyContent="center"
+      >
+        <Img
+          src="/images/02.svg"
+          borderRadius="full"
+          border="1px solid #DEDEDE"
+          width="44px"
+          height="44px"
+          boxSize="42px"
+          mr="2px"
+        />
+        <Text
+          color="black"
+          display="flex"
+          alignItems="center"
+          padding="10px 28px"
+          borderRadius="14px"
+          border="1px solid #DEDEDE"
+          gap="10px"
+        >
+          My Portfolio
+          <Icon as={MdKeyboardArrowDown} color="black" />
+        </Text>
+      </Button>
+    </Box>
+  );
+}
+
+export default TopNav;
+
+ 
+
+      justifyContent="sp"
+ 
 import {
   Flex,
   Box,

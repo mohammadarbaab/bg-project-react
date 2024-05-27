@@ -1,0 +1,33 @@
+/* main container */
+.container {
+    width: 492px;
+    height: 925px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* header styles */
+  .header {
+    width: 492px;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* calendar container */
+  .calendar-container {
+    width: 100%;
+    height: calc(100% - 52px); /* to fit within the container */
+  }
+  

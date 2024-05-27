@@ -1,4 +1,1698 @@
 
+import Calendar from "../pages/Calender/Calender";
+ 
+ <Calendar />
+ 
+import React, { useRef } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import '../Calender/Calender.css';
+
+function Calendar() {
+  const calendarRef = useRef(null);
+
+  const handlePrev = () => {
+    let calendarApi = calendarRef.current.getApi();
+    calendarApi.prev();
+  };
+
+  const handleNext = () => {
+    let calendarApi = calendarRef.current.getApi();
+    calendarApi.next();
+  };
+
+  return (
+    <div className="container">
+      <div className="header">
+        <div>
+          <button onClick={handlePrev}>{"<"}</button>
+          <span>Month</span>
+          <button onClick={handleNext}>{">"}</button>
+        </div>
+        <div>
+          <button onClick={handlePrev}>{"<"}</button>
+          <span>Year</span>
+          <button onClick={handleNext}>{">"}</button>
+        </div>
+      </div>
+      <div className="calendar-container">
+        <FullCalendar
+          ref={calendarRef}
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          initialView={"dayGridMonth"}
+          headerToolbar={false} // Hide the default header
+          height={"100%"}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Calendar;
+
+ 
+
+import { Calendar } from "antd";
+ 
+ 
+ 
+/* main container */
+.container {
+    width: 492px;
+    height: 925px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* header styles */
+  .header {
+    width: 492px;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* calendar container */
+  .calendar-container {
+    width: 100%;
+    height: calc(100% - 52px); /* to fit within the container */
+  }
+  
+ 
+import React, { useRef } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import '../Calender/Calender.css';
+
+function Calendar() {
+  const calendarRef = useRef(null);
+
+  const handlePrev = () => {
+    let calendarApi = calendarRef.current.getApi();
+    calendarApi.prev();
+  };
+
+  const handleNext = () => {
+    let calendarApi = calendarRef.current.getApi();
+    calendarApi.next();
+  };
+
+  return (
+    <div className="container">
+      <div className="header">
+        <div>
+          <button onClick={handlePrev}>{"<"}</button>
+          <span>Month</span>
+          <button onClick={handleNext}>{">"}</button>
+        </div>
+        <div>
+          <button onClick={handlePrev}>{"<"}</button>
+          <span>Year</span>
+          <button onClick={handleNext}>{">"}</button>
+        </div>
+      </div>
+      <div className="calendar-container">
+        <FullCalendar
+          ref={calendarRef}
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          initialView={"dayGridMonth"}
+          headerToolbar={false} // Hide the default header
+          height={"100%"}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Calendar;
+
+ 
+ path accordingly
+ 
+
+import './App.css'; // Assuming your CSS is in App.css or adjust
+ 
+import React from "react";
+import Fullcalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+
+function Calendar() {
+  return (
+    <div>
+      <Fullcalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView={"dayGridMonth"}
+        headerToolbar={{
+          start: "today prev,next", // will normally be on the left. if RTL, will be on the right
+          center: "title",
+          end: "dayGridMonth,timeGridWeek,timeGridDay", // will normally be on the right. if RTL, will be on the left
+        }}
+        height={"90vh"}
+      />
+    </div>
+  );
+}
+
+export default Calendar;
+ 
+
+import CryptoCalendar from "../pages/Calender/Calender";
+ 
+<CryptoCalendar />
+ 
+.custom-calendar {
+  border-radius: 14px;
+  padding: 0 10px;
+
+  .calendar-header-main {
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(135, 152, 173, 1);
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(135, 152, 173, 0.2);
+
+    .month-main, .year-main {
+      gap: 13px;
+
+      .right-arrow {
+        transform: rotateY(180deg);
+      }
+
+      .up-arrow {
+        transform: rotate(90deg);
+      }
+
+      .down-arrow {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .ant-picker-content {
+    border-collapse: separate !important;
+
+    thead {
+      th {
+        border: 1px solid rgba(135, 152, 173, 0.2);
+        text-align: center;
+        padding: 15px !important;
+        color: rgba(135, 152, 173, 1);
+        border-radius: 4px !important;
+        margin: 0 4px;
+      }
+    }
+
+    .ant-picker-cell {
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.10);
+      background: #FFF;
+
+      .ant-picker-cell-inner {
+        border-top: none !important;
+        height: 115px;
+      }
+    }
+  }
+}
+ 
+import {Calendar} from "antd";
+import dayjs from "dayjs";
+import { ArrowIcon } from "../../asesst/svsg";
+
+const CryptoCalender = () => {
+    return (
+        <Calendar
+            headerRender={CustomHeader}
+            className={'custom-calendar ht-100'}
+            // validRange={[dayjs().startOf('month'), dayjs().startOf('month')]}
+        />
+    )
+}
+
+const CustomHeader = ({value, onChange, onTypeChange}) => {
+    const handleDateChange = (dateType, actionType) => {
+        let now = dayjs(value)
+        if (dateType === 'month') {
+            now = actionType === 'decrease' ? now.subtract(1, 'month') : now.add(1, 'month')
+        } else if (dateType === 'year') {
+            now = actionType === 'decrease' ? now.subtract(1, 'year') : now.add(1, 'year')
+        }
+        onChange(now)
+    }
+
+    return (
+        <div className={'calendar-header-main d-flex align-items-center'}>
+            <div className={'month-main d-flex align-items-center'}>
+                <ArrowIcon
+                    onClick={() => handleDateChange('month', 'decrease')}
+                    className={'hover-pointer'}
+                />
+                <ArrowIcon
+                    onClick={() => handleDateChange('month', 'increase')}
+                    className={'hover-pointer right-arrow'}
+                />
+                <span className={'month-name'}>
+                    {dayjs(value).format('MMMM')}
+                </span>
+            </div>
+            <div className={'year-main d-flex align-items-center'}>
+                <span className={'year-name'}>
+                    {dayjs(value).format('YYYY')}
+                </span>
+                <ArrowIcon
+                    onClick={() => handleDateChange('year', 'increase')}
+                    className={'hover-pointer up-arrow'}
+                />
+                <ArrowIcon
+                    onClick={() => handleDateChange('year', 'decrease')}
+                    className={'hover-pointer down-arrow'}
+                />
+            </div>
+        </div>
+    )
+}
+
+export default CryptoCalender
+ 
+
+impo ArrowIcon
+ 
+
+import {ArrowIcon} from "/Utils/svgs";
+ 
+CustomCalendar
+ 
+// src/Calendar.js
+import React, { useState, useEffect } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { Bar } from 'react-chartjs-2';
+import '../Calender/Calender.css';
+
+// Mock function to fetch data
+const fetchData = async () => {
+  // Replace with your actual API call
+  return {
+    '2023-05-01': { sales: 100, purchases: 50 },
+    '2023-05-02': { sales: 200, purchases: 150 },
+    // more data...
+  };
+};
+
+const CryptoCalendar = () => {
+  const [date, setDate] = useState(new Date());
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetchData();
+      setData(result);
+    };
+    getData();
+  }, []);
+
+  const renderTileContent = ({ date, view }) => {
+    const dateString = date.toISOString().split('T')[0];
+    const dayData = data[dateString];
+
+    if (view === 'month' && dayData) {
+      const chartData = {
+        labels: ['Sales', 'Purchases'],
+        datasets: [
+          {
+            label: 'Amount',
+            data: [dayData.sales, dayData.purchases],
+            backgroundColor: ['#4caf50', '#f44336'],
+          },
+        ],
+      };
+
+      return (
+        <div className="chart-container">
+          <Bar
+            data={chartData}
+            options={{
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+              plugins: {
+                legend: { display: false },
+              },
+            }}
+          />
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="calendar-container">
+      <Calendar
+        onChange={setDate}
+        value={date}
+        tileContent={renderTileContent}
+      />
+    </div>
+  );
+};
+
+export default CryptoCalendar;
+ 
+/* src/CustomCalendar.css */
+.custom-calendar {
+  width: 100%;
+  height: 100%;
+}
+
+.calendar-header-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.month-main, .year-main {
+  display: flex;
+  align-items: center;
+}
+
+.hover-pointer {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+.up-arrow {
+  transform: rotate(-90deg);
+}
+
+.down-arrow {
+  transform: rotate(90deg);
+}
+
+.month-name, .year-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+ 
+CustomCalendar
+ 
+// src/Calendar.js
+import React, { useState, useEffect } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { Bar } from 'react-chartjs-2';
+import { Box, Center, useColorModeValue } from '@chakra-ui/react';
+import '../Calender/Calender.css';
+
+// Mock function to fetch data
+const fetchData = async () => {
+  // Replace with your actual API call
+  return {
+    '2023-05-01': { sales: 100, purchases: 50 },
+    '2023-05-02': { sales: 200, purchases: 150 },
+    // more data...
+  };
+};
+
+const CryptoCalendar = () => {
+  const [date, setDate] = useState(new Date());
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetchData();
+      setData(result);
+    };
+    getData();
+  }, []);
+
+  const renderTileContent = ({ date, view }) => {
+    const dateString = date.toISOString().split('T')[0];
+    const dayData = data[dateString];
+
+    if (view === 'month' && dayData) {
+      const chartData = {
+        labels: ['Sales', 'Purchases'],
+        datasets: [
+          {
+            label: 'Amount',
+            data: [dayData.sales, dayData.purchases],
+            backgroundColor: ['#4caf50', '#f44336'],
+          },
+        ],
+      };
+
+      return (
+        <Box className="chart-container">
+          <Bar
+            data={chartData}
+            options={{
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+              plugins: {
+                legend: { display: false },
+              },
+            }}
+          />
+        </Box>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <Center bg={useColorModeValue('gray.50', 'gray.800')} minH="100vh" py={10}>
+      <Box
+        bg={useColorModeValue('white', 'gray.700')}
+        boxShadow="lg"
+        borderRadius="lg"
+        p={6}
+        maxW="800px"
+        w="full"
+      >
+        <Calendar
+          onChange={setDate}
+          value={date}
+          tileContent={renderTileContent}
+        />
+      </Box>
+    </Center>
+  );
+};
+
+export default CryptoCalendar;
+
+ 
+
+import '../Calender/Calender.css';
+ 
+CustomCalendar
+ 
+import {Calendar} from "antd";
+import dayjs from "dayjs";
+import {ArrowIcon} from "/Utils/svgs";
+
+const CustomCalendar = () => {
+    return (
+        <Calendar
+            headerRender={CustomHeader}
+            className={'custom-calendar ht-100'}
+            // validRange={[dayjs().startOf('month'), dayjs().startOf('month')]}
+        />
+    )
+}
+
+const CustomHeader = ({value, onChange, onTypeChange}) => {
+    const handleDateChange = (dateType, actionType) => {
+        let now = dayjs(value)
+        if (dateType === 'month') {
+            now = actionType === 'decrease' ? now.subtract(1, 'month') : now.add(1, 'month')
+        } else if (dateType === 'year') {
+            now = actionType === 'decrease' ? now.subtract(1, 'year') : now.add(1, 'year')
+        }
+        onChange(now)
+    }
+
+    return (
+        <div className={'calendar-header-main d-flex align-items-center'}>
+            <div className={'month-main d-flex align-items-center'}>
+                <ArrowIcon
+                    onClick={() => handleDateChange('month', 'decrease')}
+                    className={'hover-pointer'}
+                />
+                <ArrowIcon
+                    onClick={() => handleDateChange('month', 'increase')}
+                    className={'hover-pointer right-arrow'}
+                />
+                <span className={'month-name'}>
+                    {dayjs(value).format('MMMM')}
+                </span>
+            </div>
+            <div className={'year-main d-flex align-items-center'}>
+                <span className={'year-name'}>
+                    {dayjs(value).format('YYYY')}
+                </span>
+                <ArrowIcon
+                    onClick={() => handleDateChange('year', 'increase')}
+                    className={'hover-pointer up-arrow'}
+                />
+                <ArrowIcon
+                    onClick={() => handleDateChange('year', 'decrease')}
+                    className={'hover-pointer down-arrow'}
+                />
+            </div>
+        </div>
+    )
+}
+
+export default CustomCalendar
+ 
+er styles
+ 
+
+import '../Calendar/Calendar.css'; // Keep this for the chart contain
+ 
+// src/Calendar.js
+import React, { useState, useEffect } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { Bar } from 'react-chartjs-2';
+import '../Calender/Calender.css';
+
+// Mock function to fetch data
+const fetchData = async () => {
+  // Replace with your actual API call
+  return {
+    '2023-05-01': { sales: 100, purchases: 50 },
+    '2023-05-02': { sales: 200, purchases: 150 },
+    // more data...
+  };
+};
+
+const CryptoCalendar = () => {
+  const [date, setDate] = useState(new Date());
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetchData();
+      setData(result);
+    };
+    getData();
+  }, []);
+
+  const renderTileContent = ({ date, view }) => {
+    const dateString = date.toISOString().split('T')[0];
+    const dayData = data[dateString];
+
+    if (view === 'month' && dayData) {
+      const chartData = {
+        labels: ['Sales', 'Purchases'],
+        datasets: [
+          {
+            label: 'Amount',
+            data: [dayData.sales, dayData.purchases],
+            backgroundColor: ['#4caf50', '#f44336'],
+          },
+        ],
+      };
+
+      return (
+        <div className="chart-container">
+          <Bar
+            data={chartData}
+            options={{
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+              plugins: {
+                legend: { display: false },
+              },
+            }}
+          />
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="calendar-container">
+      <Calendar
+        onChange={setDate}
+        value={date}
+        tileContent={renderTileContent}
+      />
+    </div>
+  );
+};
+
+export default CryptoCalendar;
+ 
+
+import '../Calender/'
+ 
+
+import './Calendar.css';
+ 
+import React from 'react'
+
+function Calender() {
+  return (
+    <div>
+      Calender
+    </div>
+  )
+}
+
+export default Calender
+
+ 
+
+            30
+ 
+
+            November 2023
+ 
+#4159B1
+ 
+Journaling Streak
+ 
+export const circleLogo = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="118"
+    height="119"
+    viewBox="0 0 118 119"
+    fill="none"
+  >
+    <defs>
+      <linearGradient id="halfGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="50%" stopColor="#F96E8F" />
+        <stop offset="50%" stopColor="#41B18F" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M59.0018 106.882C85.4002 106.882 106.8 85.4817 106.8 59.0834C106.8 32.685 85.4002 11.285 59.0018 11.285C32.6035 11.285 11.2034 32.685 11.2034 59.0834C11.2034 85.4817 32.6035 106.882 59.0018 106.882ZM59.0018 118.055C26.4325 118.055 0.0297852 91.6527 0.0297852 59.0834C0.0297852 26.514 26.4325 0.111328 59.0018 0.111328C91.5712 0.111328 117.974 26.514 117.974 59.0834C117.974 91.6527 91.5712 118.055 59.0018 118.055Z"
+      fill="url(#halfGradient)"
+    />
+  </svg>,
+];
+ 
+
+  circleLogo_2,
+  greenCircle,
+  pinkCircle,
+ 
+ paddingRight="11" paddingTop="10.25px" 
+ 
+<Icon />
+ 
+Winning Trades
+ 
+&nbsp; 
+ 
+justifyContent="center
+ 
+
+            gap="1px"
+ 
+
+            Win Percentage
+ 
+        <Box flexDirection="column" display="flex" justifyItems="end"
+        >
+          <Icon />
+        <Text>Win Percentage</Text>
+        </Box>
+ 
+justifyContent="end"
+ 
+justifySelf="flex-end"
+ 
+justifyItems="end"
+ 
+
+        </Box>
+ 
+
+          
+        <Box>
+ 
+
+       <VStack></VStack>
+ 
+
+       <Box>
+       </Box>
+ 
+export const circleLogo = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="118"
+    height="119"
+    viewBox="0 0 118 119"
+    fill="none"
+  >
+    <path
+      d="M59.0018 106.882C85.4002 106.882 106.8 85.4817 106.8 59.0834C106.8 32.685 85.4002 11.285 59.0018 11.285C32.6035 11.285 11.2034 32.685 11.2034 59.0834C11.2034 85.4817 32.6035 106.882 59.0018 106.882ZM59.0018 118.055C26.4325 118.055 0.0297852 91.6527 0.0297852 59.0834C0.0297852 26.514 26.4325 0.111328 59.0018 0.111328C91.5712 0.111328 117.974 26.514 117.974 59.0834C117.974 91.6527 91.5712 118.055 59.0018 118.055Z"
+      fill="#41B18F"
+    />
+  </svg>,
+];
+ 
+export const circleLogo_2 = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="59"
+    height="119"
+    viewBox="0 0 59 119"
+    fill="none"
+  >
+    <path
+      d="M11.2034 59.0834C11.2034 32.685 32.6035 11.285 59.0018 11.285V0.111328C26.4325 0.111328 0.0297852 26.514 0.0297852 59.0834C0.0297852 91.6527 26.4325 118.055 59.0018 118.055V106.882C32.6035 106.882 11.2034 85.4818 11.2034 59.0834Z"
+      fill="#F96E8F"
+    />
+  </svg>,
+];
+ 
+
+import Donut from "./graph/DonutChart";
+ 
+
+       {circleLogo_2}
+ 
+
+			title: {
+				text: "Customer Satisfaction"
+			},
+ 
+
+       {circleLogo_2}
+       {circleLogo}
+ 
+App
+ 
+      <Box
+        width="325px"
+        height="164px"
+        bg="#FFF"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70);"
+        alignSelf="stretch"
+        flex="1 0 0;"
+        mt="8px"
+      >
+       <Box paddingTop="22.11" paddingLeft="22.03" paddingBottom="23.94">
+       {circleLogo_2}
+       {circleLogo}
+       </Box> 
+       <Box>
+
+       </Box>
+      </Box>
+ 
+
+      <Box
+        width="325px"
+        height="164px"
+        bg="#FFF"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70);"
+        alignSelf="stretch"
+        flex="1 0 0;"
+        mt="8px"
+      >
+       <Box paddingTop="22.11" paddingLeft="22.03" paddingBottom="23.94">
+       {circleLogo_2}
+       {circleLogo}
+       </Box> 
+ 
+<Box
+        width="325px"
+        height="164px"
+        bg="#FFF"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70);"
+        alignSelf="stretch"
+        flex="1 0 0;"
+        mt="8px"
+      >
+       <Box paddingTop="22.11" paddingLeft="22.03" paddingBottom="23.94">
+       {circleLogo_2}
+       {circleLogo}
+       </Box> 
+       <Box>
+ 
+<Box
+        width="325px"
+        height="164px"
+        bg="#FFF"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70);"
+        alignSelf="stretch"
+        flex="1 0 0;"
+        mt="8px"
+      >
+       <Box paddingTop="22.11" paddingLeft="22.03" paddingBottom="23.94">
+       {circleLogo_2}
+       {circleLogo}
+       </Box> 
+       <Box>
+ 
+<Box
+        width="325px"
+        height="164px"
+        bg="#FFF"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70);"
+        alignSelf="stretch"
+        flex="1 0 0;"
+        mt="8px"
+      >
+       <Box paddingTop="22.11" paddingLeft="22.03" paddingBottom="23.94">
+       {circleLogo_2}
+       {circleLogo}
+       </Box> 
+       <Box>
+ 
+
+       <</>
+ 
+
+import { upArrow, dashLogo } from "../../asesst/svsg";
+import Graph from "./graph/Chart";
+ 
+
+      gap="8"
+ 
+<HStack display="flex" justifyContent="space-between">
+        </HStack>
+        <Flex
+      width="302px"
+      height="10px"
+      flexShrink="0"
+      borderRadius="6px"
+      mt="16.06px"
+      position="relative" // Set the position of the parent Flex container
+      ml="13.7px"
+    >
+      <Box
+        width="110.77px"
+        height="10px"
+        flexShrink="0"
+        borderRadius="6px"
+        bg="#4159B1"
+        position="relative" // Set the position of the blue box
+        zIndex="1" // Set a higher z-index to ensure it's above the white box
+      ></Box>
+      <Box
+        flex="1 0 0"
+        height="10px"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70)"
+        bg="#FFF"
+        alignSelf="stretch"
+        position="relative" // Set the position of the white box
+        zIndex="0" // Ensure it's below the blue box
+      ></Box>
+    </Flex>
+    <HStack display="flex" justifyContent="space-between" mt="2px">
+          <Text
+            color="var(--Secondary-Text, #8798AD);"
+            fontFamily="Ubuntu"
+            fontSize="14px"
+            fontWeight="400"
+            lineHeight="normal;"
+            paddingLeft="13.07"
+            paddingTop="4.96px"
+          >
+            November 2023
+          </Text>
+          <Text
+            color="var(--Secondary-Text, #8798AD);"
+            fontFamily="Ubuntu"
+            fontSize="14px"
+            fontWeight="400"
+            lineHeight="normal;"
+            paddingRight="9.81"
+            paddingTop="4.96px"
+          >30</Text>
+        </HStack>
+ 
+ <Text
+            color="var(--Primary-Text, #2E384D);"
+            textAlign="right"
+            fontFamily="Ubuntu"
+            fontSize="18px"
+            fontStyle="normal;"
+            fontWeight="600"
+            paddingTop="12.66px"
+            paddingRight="10.14px"
+            lineHeight="24px"
+          >
+            Journaling Streak
+          </Text>
+ 
+<Text
+            color="#2E384D"
+            fontFamily="Ubuntu"
+            fontSize="27.544px"
+            fontWeight="600"
+            lineHeight="normal;"
+            paddingLeft="13.07"
+            paddingTop="4.96px"
+          >
+            11
+          </Text>
+ 
+
+          <Text
+            color="var(--Primary-Text, #2E384D);"
+            textAlign="right"
+            fontFamily="Ubuntu"
+            fontSize="18px"
+            fontStyle="normal;"
+            fontWeight="600"
+            paddingTop="12.66px"
+            paddingRight="10.14px"
+            lineHeight="24px"
+          >
+            Journaling Streak
+          </Text>
+ 
+"#2E384D
+ 
+11
+ 
+
+      justifyItems="center"
+ 
+
+        
+    </Flex>
+ 
+
+        <Flex
+      width="302px"
+      height="10px"
+      flexShrink="0"
+      borderRadius="6px"
+      mt="16.06px"
+    >
+      <Box
+        width="110.77px"
+        height="10px"
+        flexShrink="0"
+        borderRadius="6px"
+        bg="#4159B1"
+      ></Box>
+      <Box
+        flex="1 0 0"
+        height="10px"
+        borderRadius="14px"
+        border="1px solid rgba(222, 222, 222, 0.70)"
+        bg="#FFF"
+        alignSelf="stretch"
+        mr="-15px"  // Adjust this value as needed
+      ></Box>
+ 
+
+        <Flex
+          width="302px"
+          height="10px"
+          flexShrink="0"
+          borderRadius="6px"
+          mt="16.06px"
+        >
+          <Box
+            width="110.77px"
+            height="10px"
+            flexShrink="0"
+            borderRadius="6px"
+            bg="#4159B1"
+          ></Box>
+          <Box
+            flex="1 0 0"
+            height="10px"
+            borderRadius="14px"
+            border="1px solid rgba(222, 222, 222, 0.70)"
+            bg="#FFF"
+            alignSelf="stretch"
+          ></Box>
+        </Flex>
+ 
+
+        <HStack display="flex" >
+        
+          
+        </HStack>
+ 
+   <Box
+      width="302px"
+      height="10px"
+      flexShrink="0"
+      borderRadius="6px"
+      border="1px solid #DEDEDE"
+      bg="#4159B1"
+      mt="16.06px"
+    ></Box>
+ 
+
+          <Box
+            width="110.77px"
+            height="10px"
+            flexShrink="0"
+            borderRadius="6px"
+            bg="#4159B1;"
+            mt="16.06px"
+            ml="13px"
+          ></Box>
+ 
+<Box
+            width="191.93px"
+            height="10px"
+            flexShrink="0"
+            borderRadius="6px"
+            bg="#4159B1;"
+            mt="16.06px"
+          ></Box>
+ 
+
+      gap="8px"
+ 
+
+            paddingRight="13px"
+ 
+
+            paddingLeft="13px"
+ 
+
+            paddingTop="16.06px"
+ 
+justifyContent="space-between"
+ 
+<Text
+            color="var(--Primary-Text, #2E384D);"
+            textAlign="right"
+            fontFamily="Ubuntu"
+            fontSize="18px"
+            fontStyle="normal;"
+            fontWeight="600"
+            paddingTop="12.66px"
+            paddingRight="10.14px"
+            lineHeight="24px"
+          >
+            Journaling Streak
+          </Text>
+ 
+
+          <Text
+            color="#2E384D"
+            fontFamily="Ubuntu"
+            fontSize="27.544px"
+            fontWeight="600"
+            lineHeight="normal;"
+            paddingLeft="13.07"
+            paddingTop="4.96px"
+          >
+            11
+          </Text>
+ 
+
+            marginRight="297.83px"
+ 
+
+        padding="16px"
+ 
+mt=""}
+ 
+11
+ 
+
+          paddingL
+ 
+
+          padding="13.16px "
+ 
+<Box width="325px" height="102px" padding="16px" bg="gray">
+        <Text
+          color="#2E384D"
+          fontFamily="Ubuntu"
+          fontSize="27.544px"
+          fontWeight="600"
+          padding="4px 13.16px"
+          lineHeight="normal;"
+        >
+          11
+        </Text>
+      </Box>
+ 
+
+      </VStack>
+ 
+
+      <VStack >
+ 
+
+    </Box>
+ 
+
+    <Box
+      w="717px"
+      h="430px"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+    >
+ 
+
+        shadow="md"
+ 
+
+    </Box>
+ 
+
+    <Box
+      w="717px"
+      h="430px"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+    >
+ 
+
+        <Text
+          color="slate.700"
+          fontSize="xl"
+          fontWeight="bold"
+          fontFamily="Ubuntu"
+        >
+          Overview
+        </Text>
+
+        <Box // Adding margin-top to create space between the text and the box
+          w="685px"
+          h="362px"
+          borderRadius="14px"
+          textColor="black"
+          border="1px solid rgba(222, 222, 222, 0.70);"
+          bg="#FFF"
+          gap="8px"
+        >
+          <Stack
+            direction={["column", "row"]}
+            justifyContent="space-between"
+            padding="16px 20.16px 11.92px 19.84px"
+          >
+            <Box
+              w="294px"
+              h="41px"
+              display="flex"
+              alignItems="center"
+              gap="9px"
+            >
+              <Box
+                color="black"
+                fontSize="14px"
+                fontWeight="bold"
+                padding="8px"
+                fontFamily="Ubuntu"
+              >
+                {dashLogo}
+              </Box>
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-start"
+              >
+                <Text
+                  color="black"
+                  fontSize="18px"
+                  fontWeight="600"
+                  lineHeight="24px"
+                  fontFamily="Ubuntu"
+                >
+                  Net Daily P&L
+                </Text>
+                <Box display="flex" alignItems="center" marginTop="-9px">
+                  {upArrow}
+                  <Text
+                    color="black"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    15 % compared with last day
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+
+            <Box
+              w="243px"
+              h="41px"
+              bg="gray"
+              display="inline-flex"
+              borderRadius="14px"
+              border="1px solid #DEDEDE"
+            >
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                borderRight="1px solid #DEDEDE;"
+                gap="10px"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Daily
+                </Text>
+              </Button>
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+                borderRight="1px solid #DEDEDE;"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Weekly
+                </Text>
+              </Button>
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Monthly
+                </Text>
+              </Button>
+            </Box>
+          </Stack>
+          <Box>
+            <Divider
+              orientation="horizontal"
+              mb="-8px"
+              width="645px"
+              bg="#2E384D;"
+              opacity="0.2;"
+              mx="auto"
+              h="1px"
+              color="black"
+            />
+          </Box>
+          <Stack
+            direction={["column", "row"]}
+            justifyContent="space-between"
+            padding="16px 20.16px 16px 19.84px"
+          >
+            <Box
+              w="294px"
+              h="41px"
+              display="flex"
+              alignItems="center"
+              gap="9px"
+            >
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-start"
+              >
+                <Text
+                  color="black"
+                  fontSize="28px"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                  textColor=" var(--Primary-Text, #2E384D);"
+                >
+                  ₹ 28,891.138
+                </Text>
+                <Box alignItems="center" marginTop="-9px">
+                  <Text
+                    color="var(--Primary-Text, #2E384D)"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    Profit/ Loss
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+            <Box h="41px" display="flex-end" alignItems="center" gap="9px">
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-end"
+              >
+                <Text
+                  color="black"
+                  fontSize="24px"
+                  fontWeight="400"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                  textColor=" var(--Primary-Text, #2E384D);"
+                >
+                  01-12-2023
+                </Text>
+                <Box alignItems="center" marginTop="-9px">
+                  <Text
+                    color="var(--Primary-Text, #2E384D)"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    Today
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+          </Stack>
+          <Box
+            w="645px"
+            h="200px"
+            borderRadius="14px"
+            textColor="black"
+            border="1px solid rgba(222, 222, 222, 0.70);"
+            justifySelf="center"
+            bg="#FFF"
+            ml="20.16px"
+            overflow="hidden"
+            padding="10px 10px 10px 10px"
+          >
+            <Graph />
+          </Box>
+        </Box>
+ 
+
+      <Box
+        w="717px"
+        h="430px"
+        bg="white"
+        rounded="14px"
+        shadow="md"
+        p="16px" // Adding padding to ensure proper spacing
+      >
+        <Text
+          color="slate.700"
+          fontSize="xl"
+          fontWeight="bold"
+          fontFamily="Ubuntu"
+        >
+          Overview
+        </Text>
+
+        <Box // Adding margin-top to create space between the text and the box
+          w="685px"
+          h="362px"
+          borderRadius="14px"
+          textColor="black"
+          border="1px solid rgba(222, 222, 222, 0.70);"
+          bg="#FFF"
+          gap="8px"
+        >
+          <Stack
+            direction={["column", "row"]}
+            justifyContent="space-between"
+            padding="16px 20.16px 11.92px 19.84px"
+          >
+            <Box
+              w="294px"
+              h="41px"
+              display="flex"
+              alignItems="center"
+              gap="9px"
+            >
+              <Box
+                color="black"
+                fontSize="14px"
+                fontWeight="bold"
+                padding="8px"
+                fontFamily="Ubuntu"
+              >
+                {dashLogo}
+              </Box>
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-start"
+              >
+                <Text
+                  color="black"
+                  fontSize="18px"
+                  fontWeight="600"
+                  lineHeight="24px"
+                  fontFamily="Ubuntu"
+                >
+                  Net Daily P&L
+                </Text>
+                <Box display="flex" alignItems="center" marginTop="-9px">
+                  {upArrow}
+                  <Text
+                    color="black"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    15 % compared with last day
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+
+            <Box
+              w="243px"
+              h="41px"
+              bg="gray"
+              display="inline-flex"
+              borderRadius="14px"
+              border="1px solid #DEDEDE"
+            >
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                borderRight="1px solid #DEDEDE;"
+                gap="10px"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Daily
+                </Text>
+              </Button>
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+                borderRight="1px solid #DEDEDE;"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Weekly
+                </Text>
+              </Button>
+              <Button
+                display="flex"
+                width="81px"
+                padding="10px 16px 12px 16px;"
+                justifyContent="center"
+                alignItems="center"
+                gap="10px"
+              >
+                <Text
+                  fontSize="14px"
+                  fontStyle="normal"
+                  textColor="white"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                >
+                  Monthly
+                </Text>
+              </Button>
+            </Box>
+          </Stack>
+          <Box>
+            <Divider
+              orientation="horizontal"
+              mb="-8px"
+              width="645px"
+              bg="#2E384D;"
+              opacity="0.2;"
+              mx="auto"
+              h="1px"
+              color="black"
+            />
+          </Box>
+          <Stack
+            direction={["column", "row"]}
+            justifyContent="space-between"
+            padding="16px 20.16px 16px 19.84px"
+          >
+            <Box
+              w="294px"
+              h="41px"
+              display="flex"
+              alignItems="center"
+              gap="9px"
+            >
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-start"
+              >
+                <Text
+                  color="black"
+                  fontSize="28px"
+                  fontWeight="600"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                  textColor=" var(--Primary-Text, #2E384D);"
+                >
+                  ₹ 28,891.138
+                </Text>
+                <Box alignItems="center" marginTop="-9px">
+                  <Text
+                    color="var(--Primary-Text, #2E384D)"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    Profit/ Loss
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+            <Box h="41px" display="flex-end" alignItems="center" gap="9px">
+              <VStack
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="flex-end"
+              >
+                <Text
+                  color="black"
+                  fontSize="24px"
+                  fontWeight="400"
+                  lineHeight="normal"
+                  fontFamily="Ubuntu"
+                  textColor=" var(--Primary-Text, #2E384D);"
+                >
+                  01-12-2023
+                </Text>
+                <Box alignItems="center" marginTop="-9px">
+                  <Text
+                    color="var(--Primary-Text, #2E384D)"
+                    fontSize="12px"
+                    fontWeight="400"
+                    lineHeight="normal"
+                    opacity="0.6"
+                    fontFamily="Manrope"
+                  >
+                    Today
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+          </Stack>
+          <Box
+            w="645px"
+            h="200px"
+            borderRadius="14px"
+            textColor="black"
+            border="1px solid rgba(222, 222, 222, 0.70);"
+            justifySelf="center"
+            bg="#FFF"
+            ml="20.16px"
+            overflow="hidden"
+            padding="10px 10px 10px 10px"
+          >
+            <Graph />
+          </Box>
+        </Box>
+      </Box>
+ 
+
 import { Box } from "@chakra-ui/react"; // Import Box from Chakra UI
  
 

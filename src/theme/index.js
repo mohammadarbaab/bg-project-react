@@ -8,7 +8,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       "html, body": {
-        backgroundColor: "white", // Set the default background color to white
+        backgroundColor: "#F4F6FC;", // Set the default background color to white
         color: "black", // Set the default text color to black
       },
       "svg": {

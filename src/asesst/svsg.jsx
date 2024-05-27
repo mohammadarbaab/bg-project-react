@@ -32,3 +32,75 @@ export const dashLogo = [
     />
   </svg>,
 ];
+
+export const circleLogo = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="118"
+    height="119"
+    viewBox="0 0 118 119"
+    fill="none"
+  >
+    <defs>
+      <linearGradient id="halfGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="50%" stopColor="#F96E8F" />
+        <stop offset="50%" stopColor="#41B18F" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M59.0018 106.882C85.4002 106.882 106.8 85.4817 106.8 59.0834C106.8 32.685 85.4002 11.285 59.0018 11.285C32.6035 11.285 11.2034 32.685 11.2034 59.0834C11.2034 85.4817 32.6035 106.882 59.0018 106.882ZM59.0018 118.055C26.4325 118.055 0.0297852 91.6527 0.0297852 59.0834C0.0297852 26.514 26.4325 0.111328 59.0018 0.111328C91.5712 0.111328 117.974 26.514 117.974 59.0834C117.974 91.6527 91.5712 118.055 59.0018 118.055Z"
+      fill="url(#halfGradient)"
+    />
+    <text
+      x="50%"
+      y="50%"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fill="#2E384D"
+      fontFamily="Ubuntu"
+      fontSize="23.541px"
+      fontWeight="600"
+    >
+      50
+    </text>
+  </svg>,
+];
+
+
+export const greenCircle = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="13"
+    viewBox="0 0 12 13"
+    fill="none"
+  >
+    <circle cx="5.93481" cy="6.58179" r="5.64429" fill="#41B18F" />
+  </svg>,
+];
+
+export const pinkCircle = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+  >
+    <circle cx="5.93481" cy="6.31226" r="5.64429" fill="#F96E8F" />
+  </svg>,
+];
+
+export const saveLogo=[<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+<path opacity="0.4" d="M17.1865 8.09375H6.81315C4.53315 8.09375 2.6665 9.9604 2.6665 12.2404V27.3871C2.6665 29.3204 4.05317 30.1471 5.7465 29.2004L10.9865 26.2804C11.5465 25.9737 12.4532 25.9737 12.9998 26.2804L18.2398 29.2004C19.9332 30.1471 21.3198 29.3204 21.3198 27.3871V12.2404C21.3332 9.9604 19.4665 8.09375 17.1865 8.09375Z" fill="#3BBB6E"/>
+<path d="M29.3332 7.06755V22.2142C29.3332 24.1476 27.9465 24.9609 26.2532 24.0275L21.3332 21.2809V12.2409C21.3332 9.96089 19.4665 8.09424 17.1865 8.09424H10.6665V7.06755C10.6665 4.78755 12.5332 2.9209 14.8132 2.9209H25.1865C27.4665 2.9209 29.3332 4.78755 29.3332 7.06755Z" fill="#3BBB6E"/>
+</svg>]
+
+// export const ArrowIcon = ({className, onClick}) => {
+//   return (
+//       <svg className={className} onClick={onClick} width="6" height="10" viewBox="0 0 6 10" fill="none"
+//            xmlns="http://www.w3.org/2000/svg">
+//           <path d="M5.66699 10L0.666992 5L5.66699 0L5.66699 10Z" fill="#1C1B1F" fill-opacity="0.7"/>
+//       </svg>
+//   )
+// }

@@ -32,7 +32,7 @@ function Portfolio() {
           color="slate.700"
           fontSize="xl"
           fontWeight="bold"
-          fontFamily="Manrope"
+          fontFamily="Ubuntu"
         >
           Overview
         </Text>
@@ -90,7 +90,7 @@ function Portfolio() {
                     fontWeight="400"
                     lineHeight="normal"
                     opacity="0.6"
-                    fontFamily="Manrope"
+                    fontFamily="Ubuntu"
                   >
                     15 % compared with last day
                   </Text>
